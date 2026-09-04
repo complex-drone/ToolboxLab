@@ -1,0 +1,30 @@
+# Cloudflare Pages 重定向规则
+# 格式: /旧路径 /新路径 [状态码]
+
+# 默认语言重定向 (zh-CN)
+/ /zh-CN/ 301
+/password /zh-CN/password 301
+/about /zh-CN/about 301
+
+# 英语版本重定向
+/en-US /en-US/ 301
+
+# www 到非 www 重定向
+https://www.toolboxlab.pages.dev/* https://toolboxlab.pages.dev/:splat 301
+
+# HTTP 到 HTTPS 重定向
+http://toolboxlab.pages.dev/* https://toolboxlab.pages.dev/:splat 301
+
+# SEO 友好的短路径重定向
+/zh /zh-CN/ 301
+/en /en-US/ 301
+
+# 旧路径兼容重定向
+/password-generator /zh-CN/password 301
+/password-generator-en /en-US/password 301
+/about-us /zh-CN/about 301
+/about-us-en /en-US/about 301
+/index.html /zh-CN/ 301
+
+# 404 回退
+/* /zh-CN/ 404

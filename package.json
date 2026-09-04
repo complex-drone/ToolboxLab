@@ -1,0 +1,24 @@
+{
+  "name": "toolboxlab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ToolboxLab - 纯前端本地工具集，所有数据仅在本地处理",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/generate-sitemap.js",
+    "build:prod": "vite build --mode production && node scripts/generate-sitemap.js",
+    "preview": "vite preview",
+    "validate:analytics": "node scripts/validate-analytics.js"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.11.1",
+    "vue": "^3.5.13",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^5.4.11"
+  }
+}

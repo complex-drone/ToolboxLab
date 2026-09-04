@@ -1,0 +1,23 @@
+# Cloudflare Pages 安全头配置
+# 此文件会被 Vite 复制到 dist/ 目录
+
+# 内容安全策略 (CSP)
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'
+
+# HTTP 严格传输安全 (HSTS)
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# 防止点击劫持
+X-Frame-Options: DENY
+
+# 防止 MIME 嗅探攻击
+X-Content-Type-Options: nosniff
+
+# XSS 过滤
+X-XSS-Protection: 1; mode=block
+
+# 控制引用来源信息
+Referrer-Policy: strict-origin-when-cross-origin
+
+# 限制浏览器功能访问
+Permissions-Policy: camera=(), microphone=(), geolocation=(), usb=(), payment=()
