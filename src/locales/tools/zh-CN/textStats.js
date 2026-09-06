@@ -1,0 +1,15 @@
+export default {
+  title: '代码 / 文本统计',
+  description: '实时统计字符、单词、行数、段落、中文字数与 UTF-8 字节大小。',
+  inputLabel: '输入文本',
+  inputPlaceholder: '粘贴代码或文本内容，实时显示统计结果',
+  statTotalChars: '总字符数（含空格）',
+  statCharsNoSpace: '字符数（不含空格）',
+  statWords: '单词数',
+  statLines: '行数',
+  statParagraphs: '段落数',
+  statChineseChars: '中文字数',
+  byteSize: 'UTF-8 字节大小',
+  sample: '示例文本',
+  emptyHint: '暂无内容，所有统计为 0，输入文本后自动更新',
+}

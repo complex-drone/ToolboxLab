@@ -1,0 +1,16 @@
+export default {
+  title: 'JSON YAML XML 互转',
+  description: '在 JSON、YAML、XML 三种格式之间互相转换与格式化',
+  inputFormat: '输入格式',
+  outputFormat: '输出格式',
+  json: 'JSON',
+  yaml: 'YAML',
+  xml: 'XML',
+  inputPlaceholder: '在此粘贴 JSON、YAML 或 XML 内容…',
+  outputPlaceholder: '转换结果将显示在这里…',
+  converted: '转换成功',
+  sameFormatHint: '输入与输出格式相同，将执行格式化',
+  emptyInput: '请输入要转换的内容',
+  noRoot: 'XML 缺少根元素',
+  xmlConvention: '约定：XML 属性保存为 _attributes 键，元素文本内容保存为 _text 键',
+}

@@ -1,0 +1,15 @@
+export default {
+  title: 'Text & Code Stats',
+  description: 'Count characters, words, lines, paragraphs, Chinese characters and UTF-8 byte size in real time.',
+  inputLabel: 'Input text',
+  inputPlaceholder: 'Paste code or text to see live statistics',
+  statTotalChars: 'Total characters (with spaces)',
+  statCharsNoSpace: 'Characters (without spaces)',
+  statWords: 'Words',
+  statLines: 'Lines',
+  statParagraphs: 'Paragraphs',
+  statChineseChars: 'Chinese characters',
+  byteSize: 'UTF-8 byte size',
+  sample: 'Sample text',
+  emptyHint: 'Nothing yet. All counts are 0 and will update as you type.',
+}

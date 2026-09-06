@@ -1,0 +1,16 @@
+export default {
+  title: 'JSON / YAML / XML Converter',
+  description: 'Convert and format between JSON, YAML and XML',
+  inputFormat: 'Input format',
+  outputFormat: 'Output format',
+  json: 'JSON',
+  yaml: 'YAML',
+  xml: 'XML',
+  inputPlaceholder: 'Paste JSON, YAML or XML content here…',
+  outputPlaceholder: 'The conversion result will appear here…',
+  converted: 'Converted successfully',
+  sameFormatHint: 'Input and output formats are the same, the content will be formatted',
+  emptyInput: 'Please enter content to convert',
+  noRoot: 'XML is missing a root element',
+  xmlConvention: 'Convention: XML attributes are stored under the _attributes key, element text under the _text key',
+}
