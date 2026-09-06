@@ -1,0 +1,15 @@
+export default {
+  title: 'Whitespace Viewer',
+  description: 'Add line numbers to text and visualize invisible characters like spaces, tabs and line breaks',
+  inputLabel: 'Input text',
+  renderLabel: 'Visualized preview',
+  inputPlaceholder: 'Type or paste text here, line numbers and whitespace marks will show on the right…',
+  showSpaces: 'Show space marks',
+  showTabs: 'Show tab marks',
+  showEol: 'Show line break marks',
+  legendSpace: 'Space',
+  legendTab: 'Tab',
+  legendEol: 'Line break',
+  copyMarked: 'Copy marked text',
+  truncated: 'Text exceeds 5000 lines, only the first 5000 lines are rendered',
+}

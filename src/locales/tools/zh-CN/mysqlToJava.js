@@ -1,0 +1,15 @@
+export default {
+  title: 'MySQL 转 JavaBean',
+  description: '解析 CREATE TABLE 语句，生成带注释的 Java 实体类，支持 Lombok 与完整 Getter/Setter',
+  inputLabel: 'CREATE TABLE 语句',
+  inputPlaceholder: '在此粘贴建表 SQL，支持多条 CREATE TABLE 语句…',
+  useLombok: '使用 Lombok（不生成 Getter/Setter）',
+  tinyintAsBoolean: 'tinyint(1) 映射为 Boolean',
+  generate: '生成 Java 类',
+  emptyInput: '请输入 CREATE TABLE 语句',
+  noCreateTable: '未找到有效的 CREATE TABLE 语句，请检查输入',
+  noColumns: '表 %1 未解析出字段，已跳过',
+  unknownType: '无法识别的类型 %1 已映射为 String（原始类型：%2）',
+  tableNameLabel: '表名',
+  generated: '已生成 %1 个 Java 类',
+}

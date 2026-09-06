@@ -1,0 +1,15 @@
+export default {
+  title: '行号与空白字符显示',
+  description: '为文本添加行号，并把空格、Tab、换行等不可见字符可视化标注出来',
+  inputLabel: '输入文本',
+  renderLabel: '可视化预览',
+  inputPlaceholder: '在此输入或粘贴文本，右侧将显示行号与空白字符标记…',
+  showSpaces: '显示空格标记',
+  showTabs: '显示 Tab 标记',
+  showEol: '显示换行标记',
+  legendSpace: '空格',
+  legendTab: 'Tab',
+  legendEol: '换行',
+  copyMarked: '复制带标记文本',
+  truncated: '文本超过 5000 行，仅渲染前 5000 行',
+}

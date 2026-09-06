@@ -1,0 +1,15 @@
+export default {
+  title: 'MySQL to JavaBean',
+  description: 'Parse CREATE TABLE statements and generate commented Java entity classes with Lombok or full getters and setters',
+  inputLabel: 'CREATE TABLE statement',
+  inputPlaceholder: 'Paste your CREATE TABLE SQL here, multiple statements supported…',
+  useLombok: 'Use Lombok (no getters/setters)',
+  tinyintAsBoolean: 'Map tinyint(1) to Boolean',
+  generate: 'Generate Java classes',
+  emptyInput: 'Please enter a CREATE TABLE statement',
+  noCreateTable: 'No valid CREATE TABLE statement found, please check the input',
+  noColumns: 'Table %1 has no parsed columns, skipped',
+  unknownType: 'Unknown type %1 mapped to String (original type: %2)',
+  tableNameLabel: 'Table',
+  generated: 'Generated %1 Java class(es)',
+}

@@ -1,0 +1,16 @@
+export default {
+  title: 'TOML Formatter',
+  description: 'Validate TOML syntax and format it, with two-way conversion between TOML and JSON',
+  toml: 'TOML',
+  json: 'JSON',
+  direction: 'Direction',
+  dirTomlToJson: 'TOML to JSON',
+  dirJsonToToml: 'JSON to TOML',
+  jsonIndent: 'JSON indent',
+  formattedToml: 'Formatted TOML',
+  jsonOutput: 'JSON output',
+  valid: 'Valid syntax',
+  invalid: 'Syntax error',
+  inputPlaceholder: 'Paste TOML or JSON here, validated and formatted in real time…',
+  positionHint: 'Error near line %1, column %2',
+}

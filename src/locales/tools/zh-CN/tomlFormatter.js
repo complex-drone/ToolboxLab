@@ -1,0 +1,16 @@
+export default {
+  title: 'TOML 格式化校验',
+  description: '校验 TOML 语法并格式化排版，支持 TOML 与 JSON 双向转换',
+  toml: 'TOML',
+  json: 'JSON',
+  direction: '转换方向',
+  dirTomlToJson: 'TOML 转 JSON',
+  dirJsonToToml: 'JSON 转 TOML',
+  jsonIndent: 'JSON 缩进',
+  formattedToml: '格式化 TOML',
+  jsonOutput: 'JSON 输出',
+  valid: '语法有效',
+  invalid: '语法错误',
+  inputPlaceholder: '在此粘贴 TOML 或 JSON 内容，实时校验并格式化…',
+  positionHint: '错误位置：第 %1 行，第 %2 列附近',
+}
