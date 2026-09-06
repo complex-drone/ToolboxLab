@@ -24,6 +24,10 @@ export default defineConfig({
   build: {
     // pdfjs-dist 4.x 使用 top-level await，需要 es2022 目标
     target: 'es2022',
+    // 重量级第三方库（opencc 词典/官方 mammoth 浏览器构建/pdf.worker 等均为
+    // 按需懒加载的独立 chunk 或 asset，只在用户打开对应工具时下载），
+    // 无法也不应继续拆分，故上调体积告警阈值
+    chunkSizeWarningLimit: 800,
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {

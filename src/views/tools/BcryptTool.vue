@@ -40,7 +40,7 @@ const compareMs = ref(null)
 const compareBusy = ref(false)
 const compareError = ref('')
 
-/** bcryptjs 为 CJS 包，兼容 default 与命名导出两种互操作形态 */
+/** bcryptjs v3：原生 ESM 浏览器兼容（不再引用 Node crypto），兼容 default 与命名导出 */
 async function loadBcrypt() {
   const mod = await import('bcryptjs')
   const bcrypt = mod.default && typeof mod.default.hash === 'function' ? mod.default : mod

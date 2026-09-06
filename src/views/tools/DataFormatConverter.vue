@@ -10,7 +10,7 @@ import CopyButton from '@/components/tools/CopyButton.vue'
  * JSON / YAML / XML 互转
  * - JSON: JSON.parse / JSON.stringify
  * - YAML: js-yaml load / dump
- * - XML: xml-js xml2js（解析后整理为贴近 JSON 的结构）/ js2xml
+ * - XML: 浏览器原生 DOMParser 解析 + 自实现序列化（替代 xml-js，消除其 Node stream 依赖）
  * - 相同格式 = 格式化；转换失败在行内展示原始错误信息
  */
 const { t } = useI18n()
@@ -51,7 +51,50 @@ const EXAMPLES = {
     '</site>\n',
 }
 
-/** 把 xml-js 的元素节点整理为贴近 JSON 的普通对象/原始值 */
+/** XML 转义：文本（属性额外转义引号） */
+function escapeXmlText(value) {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+
+function escapeXmlAttr(value) {
+  return escapeXmlText(value).replace(/"/g, '&quot;').replace(/'/g, '&apos;')
+}
+
+/** DOM 元素节点 → 中间元素树（type/name/attributes/elements，供 elementToValue 消费） */
+function domToXmlNode(el) {
+  const node = { type: 'element', name: el.nodeName, elements: [] }
+  if (el.attributes && el.attributes.length > 0) {
+    const attributes = {}
+    for (const attr of Array.from(el.attributes)) attributes[attr.name] = attr.value
+    node.attributes = attributes
+  }
+  // 单次遍历保持混合内容顺序；纯空白的缩进文本跳过（避免产生 _text: '' 噪声）
+  for (const child of Array.from(el.childNodes)) {
+    if (child.nodeType === 1) {
+      node.elements.push(domToXmlNode(child))
+      continue
+    }
+    // 文本(3)与 CDATA(4) 视为文本
+    const isText = child.nodeType === 3 || child.nodeType === 4
+    if (!isText) continue
+    const text = child.nodeValue == null ? '' : child.nodeValue.trim()
+    if (text) node.elements.push({ type: 'text', text })
+  }
+  return node
+}
+
+/** 浏览器原生 XML 解析：返回根元素的中间节点树 */
+function parseXmlRoot(src) {
+  const doc = new DOMParser().parseFromString(src, 'text/xml')
+  if (doc.getElementsByTagName('parsererror').length > 0) {
+    throw new Error(t('toolsCommon.invalidInput'))
+  }
+  const root = doc.documentElement
+  if (!root || root.nodeName === 'parsererror') throw new Error(t('tools.dataFormatConverter.noRoot'))
+  return domToXmlNode(root)
+}
+
+/** 把中间元素树整理为贴近 JSON 的普通对象/原始值 */
 function elementToValue(node) {
   const out = {}
   if (node.attributes && Object.keys(node.attributes).length > 0) {
@@ -96,16 +139,11 @@ async function parseInput(src, format) {
     return data
   }
   // xml
-  const x2j = await import('xml-js')
-  const raw = x2j.xml2js(src, { compact: false, explicitArray: false, trim: true })
-  const elements = raw && raw.elements
-  const list = Array.isArray(elements) ? elements : elements ? [elements] : []
-  const root = list.find(el => el && el.type === 'element')
-  if (!root) throw new Error(t('tools.dataFormatConverter.noRoot'))
+  const root = parseXmlRoot(src)
   return { [root.name]: elementToValue(root) }
 }
 
-/** 把普通对象/数组/原始值转换为 xml-js 元素节点 */
+/** 把普通对象/数组/原始值转换为中间 XML 元素节点（type/name/attributes/elements） */
 function toXmlElement(name, value) {
   if (value === null || value === undefined) {
     return { type: 'element', name, elements: [] }
@@ -156,6 +194,23 @@ function buildXmlRoot(data) {
   return toXmlElement('root', data)
 }
 
+/** 中间元素树 → 缩进 XML 字符串（对齐 js2xml spaces 风格：纯文本内联、子元素换行缩进） */
+function renderXmlNode(node, depth, spaces) {
+  const pad = ' '.repeat(spaces * depth)
+  const attrs = node.attributes
+    ? Object.entries(node.attributes).map(([k, v]) => ` ${k}="${escapeXmlAttr(v)}"`).join('')
+    : ''
+  const children = Array.isArray(node.elements) ? node.elements : []
+  if (children.length === 0) return `${pad}<${node.name}${attrs}/>`
+  if (children.every(c => c.type === 'text')) {
+    return `${pad}<${node.name}${attrs}>${children.map(c => escapeXmlText(c.text)).join('')}</${node.name}>`
+  }
+  const inner = children
+    .map(c => (c.type === 'text' ? escapeXmlText(c.text) : '\n' + renderXmlNode(c, depth + 1, spaces)))
+    .join('')
+  return `${pad}<${node.name}${attrs}>${inner}\n${pad}</${node.name}>`
+}
+
 async function serialize(data, format) {
   if (format === 'json') {
     return JSON.stringify(data, null, 2)
@@ -164,8 +219,7 @@ async function serialize(data, format) {
     const yaml = await import('js-yaml')
     return yaml.dump(data, { indent: 2, skipInvalid: true, lineWidth: -1 })
   }
-  const x2j = await import('xml-js')
-  return x2j.js2xml({ elements: [buildXmlRoot(data)] }, { spaces: 2 })
+  return renderXmlNode(buildXmlRoot(data), 0, 2)
 }
 
 async function convert() {

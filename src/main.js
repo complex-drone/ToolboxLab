@@ -2,6 +2,8 @@ import { createApp as createVueApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import i18n from './locales/index.js'
+// 该模块已被全站静态引用，此处也用静态导入（动态导入会触发 Rollup 双通道警告）
+import { useToast } from './composables/useToast.js'
 import './styles/tailwind.css'
 
 // 导出工厂函数供 vite-ssg 使用（预渲染时必须）
@@ -20,10 +22,8 @@ if (typeof window !== 'undefined') {
   app.config.errorHandler = (err) => {
     console.error('[ToolboxLab] Unhandled error:', err)
     try {
-      import('./composables/useToast.js').then(({ useToast }) => {
-        const toast = useToast()
-        toast.error(i18n.global.t('toolsCommon.error'))
-      })
+      const toast = useToast()
+      toast.error(i18n.global.t('toolsCommon.error'))
     } catch {
       // 忽略提示失败
     }

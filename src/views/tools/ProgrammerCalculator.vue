@@ -115,7 +115,7 @@ function describeResult(r, mode, math) {
 
 async function evaluate(text, mode) {
   try {
-    const math = await import('mathjs')
+    const math = await import('mathjs/number')
     const prepared = toDecimalExpression(text, mode)
     let r
     let failed = false

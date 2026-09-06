@@ -7,7 +7,7 @@ import CopyButton from '@/components/tools/CopyButton.vue'
 
 /**
  * TOML 格式化 & 校验
- * - @iarna/toml 动态加载：TOML.parse / TOML.stringify
+ * - smol-toml 动态加载：parse / stringify（原生 ESM、无 Node 依赖、无 eval）
  * - 双向：TOML => JSON 与 JSON => TOML；输出 = parse 后 stringify 的格式化 TOML + JSON
  * - 300ms 防抖实时校验；TOML 错误对象含 line/col 时显示行列位置，否则显示原始消息
  */
@@ -47,10 +47,10 @@ const EXAMPLE_TOML = [
 
 let tomlModule = null
 
-/** 按需动态加载 @iarna/toml（CJS 互兼容 default / 命名导出） */
+/** 按需动态加载 smol-toml（原生 ESM 命名导出；TomlError 自带 line/column 行定位） */
 async function loadToml() {
   if (tomlModule) return tomlModule
-  const mod = await import('@iarna/toml')
+  const mod = await import('smol-toml')
   tomlModule = mod && mod.default ? mod.default : mod
   if (!tomlModule || typeof tomlModule.parse !== 'function') {
     throw new Error('toml module unavailable')

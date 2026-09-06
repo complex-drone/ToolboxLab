@@ -65,14 +65,9 @@ async function loadXlsx() {
 }
 
 async function loadMammoth() {
-  try {
-    const mod = await import('mammoth/mammoth.browser.min.js')
-    return mod && mod.default ? mod.default : mod
-  } catch {
-    // 浏览器独立构建不可用时回退到包主入口
-    const mod = await import('mammoth')
-    return mod && mod.default ? mod.default : mod
-  }
+  // 仅使用预打包的浏览器构建（包主入口会引入 Node 的 stream/sax 依赖）
+  const mod = await import('mammoth/mammoth.browser.min.js')
+  return mod && mod.default ? mod.default : mod
 }
 
 function loadSheet(name) {
