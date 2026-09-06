@@ -1,0 +1,16 @@
+export default {
+  title: 'RSS 阅读器',
+  description: '输入 RSS 或 Atom 订阅源地址，在线浏览最新文章列表',
+  urlLabel: '订阅源地址',
+  urlPlaceholder: '例如 https://example.com/feed.xml',
+  fetchBtn: '读取订阅源',
+  articleCount: '共 {n} 篇文章',
+  errInvalidUrl: '请输入以 http 或 https 开头的合法订阅源地址',
+  errFetchFailed: '读取失败：地址可能无效，或源站不允许浏览器跨域直接访问（CORS 限制）',
+  authorLabel: '作者',
+  untitled: '无标题',
+  usingFallback: '公共转换服务不可用，已改为直连读取该订阅源',
+  tryingDirect: '公共转换服务不可用，正在尝试直连读取…',
+  emptyFeed: '该订阅源当前没有文章',
+  note: '订阅内容通过 rss2json 公共接口或直连方式获取，文章标题与摘要版权归原作者所有，点击标题可跳转原文',
+}

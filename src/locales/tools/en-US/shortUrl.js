@@ -1,0 +1,18 @@
+export default {
+  title: 'Short URL Generator',
+  description: 'Turn long links into short ones via the free spoo.me service, with custom aliases and history',
+  longLabel: 'Long URL',
+  longPlaceholder: 'Paste a long URL, e.g. https://example.com/very/long/path',
+  customLabel: 'Custom alias (optional)',
+  customPlaceholder: 'Letters and digits only',
+  generateBtn: 'Generate short URL',
+  resultTitle: 'Result',
+  openBtn: 'Open link',
+  generated: 'Short URL created',
+  errInvalidUrl: 'Please enter a valid URL, e.g. https://example.com',
+  errInvalidSuffix: 'The custom alias may contain letters and digits only',
+  errApi: 'Generation failed, please try again later',
+  historyTitle: 'History',
+  sessionChip: 'This session',
+  privacyNote: 'Short URLs are generated through the third-party public service spoo.me (fallback is.gd). Do not use it for links containing private or sensitive information',
+}

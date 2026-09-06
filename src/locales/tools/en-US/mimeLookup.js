@@ -1,0 +1,17 @@
+export default {
+  title: 'MIME Type Lookup',
+  description: 'Look up file extension and MIME type mappings in both directions with one-click copy',
+  searchPlaceholder: 'Enter an extension (e.g. .jpg) or a MIME type (e.g. image/jpeg)',
+  searchLabel: 'Search extension or MIME type',
+  tabAuto: 'Auto',
+  tabExt: 'By extension',
+  tabMime: 'By MIME type',
+  modeExtHint: 'Searching by extension: shows the MIME type for the given extension',
+  modeMimeHint: 'Searching by MIME type: shows all extensions for the given type',
+  resultsUnit: 'results',
+  mappingsTotal: 'built-in mappings',
+  emptyQuery: 'Type an extension or MIME type to start; the search direction is detected automatically',
+  noResults: 'No matching mappings found',
+  copyMime: 'Copy MIME type',
+  copyExt: 'Copy extension',
+}

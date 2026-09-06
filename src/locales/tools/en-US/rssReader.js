@@ -1,0 +1,16 @@
+export default {
+  title: 'RSS Reader',
+  description: 'Enter an RSS or Atom feed URL to browse the latest articles online',
+  urlLabel: 'Feed URL',
+  urlPlaceholder: 'e.g. https://example.com/feed.xml',
+  fetchBtn: 'Fetch Feed',
+  articleCount: '{n} articles',
+  errInvalidUrl: 'Please enter a valid feed URL starting with http or https',
+  errFetchFailed: 'Failed to fetch: the URL may be invalid, or the source does not allow direct cross-origin browser access (CORS restriction)',
+  authorLabel: 'Author',
+  untitled: 'Untitled',
+  usingFallback: 'The public conversion service is unavailable. The feed was read directly instead',
+  tryingDirect: 'The public conversion service is unavailable. Trying to read the feed directly…',
+  emptyFeed: 'This feed has no articles right now',
+  note: 'Feeds are fetched via the rss2json public API or directly. Article titles and summaries belong to their authors. Click a title to open the original page',
+}

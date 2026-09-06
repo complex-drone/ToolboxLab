@@ -1,0 +1,18 @@
+export default {
+  title: '短链接生成',
+  description: '通过 spoo.me 免费服务把长链接转换为短链接，支持自定义后缀与历史记录',
+  longLabel: '长链接',
+  longPlaceholder: '粘贴长链接，如 https://example.com/very/long/path',
+  customLabel: '自定义后缀（可选）',
+  customPlaceholder: '仅限字母与数字',
+  generateBtn: '生成短链接',
+  resultTitle: '生成结果',
+  openBtn: '打开链接',
+  generated: '短链接已生成',
+  errInvalidUrl: '请输入合法的链接，例如 https://example.com',
+  errInvalidSuffix: '自定义后缀只能包含字母和数字',
+  errApi: '生成失败，请稍后重试',
+  historyTitle: '历史记录',
+  sessionChip: '本次会话',
+  privacyNote: '短链接经由第三方公共服务 spoo.me 生成（备用 is.gd），请勿用于包含隐私或敏感信息的链接',
+}

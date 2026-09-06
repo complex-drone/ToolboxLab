@@ -1,0 +1,17 @@
+export default {
+  title: 'MIME 类型参考',
+  description: '输入扩展名或 MIME 类型双向查询常见文件映射，结果一键复制',
+  searchPlaceholder: '输入扩展名（如 .jpg）或 MIME 类型（如 image/jpeg）',
+  searchLabel: '搜索扩展名或 MIME 类型',
+  tabAuto: '智能识别',
+  tabExt: '按扩展名',
+  tabMime: '按 MIME 类型',
+  modeExtHint: '当前按扩展名搜索：显示该扩展名对应的 MIME 类型',
+  modeMimeHint: '当前按 MIME 类型搜索：显示该类型对应的所有扩展名',
+  resultsUnit: '条结果',
+  mappingsTotal: '内置映射',
+  emptyQuery: '输入扩展名或 MIME 类型开始查询，支持智能识别搜索方向',
+  noResults: '没有匹配的映射记录',
+  copyMime: '复制 MIME 类型',
+  copyExt: '复制扩展名',
+}
