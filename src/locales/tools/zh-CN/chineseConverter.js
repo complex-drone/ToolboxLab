@@ -1,0 +1,17 @@
+export default {
+  title: '繁简体转换',
+  description: '基于 OpenCC 的简繁中文实时互转，支持台湾正体与香港繁体',
+  directionLabel: '转换方向',
+  dirS2t: '简 → 繁',
+  dirT2s: '繁 → 简',
+  variantLabel: '繁体变体',
+  variantTwp: '台湾正体（含词汇转换）',
+  variantHk: '香港繁体',
+  variantT: '开放繁体（OpenCC 标准）',
+  charCount: '{n} 字符',
+  inputPlaceholder: '输入或粘贴需要转换的中文文本…',
+  outputHint: '转换结果会实时显示在这里',
+  swapTitle: '将输出回填到输入，并切换转换方向',
+  errLibrary: '转换组件加载失败，请检查网络后刷新重试',
+  note: '转换基于 OpenCC 开源词库：台湾正体（twp）包含词汇级转换，如「内存→記憶體」「软件→軟體」；香港繁体（hk）按香港习惯用字转换；开放繁体（t）为 OpenCC 标准繁体。标点与用词会随所选变体自动调整。',
+}

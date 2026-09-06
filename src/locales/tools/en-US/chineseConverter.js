@@ -1,0 +1,17 @@
+export default {
+  title: 'Chinese Converter',
+  description: 'Convert between Simplified and Traditional Chinese in real time with OpenCC',
+  directionLabel: 'Direction',
+  dirS2t: 'Simplified → Traditional',
+  dirT2s: 'Traditional → Simplified',
+  variantLabel: 'Traditional variant',
+  variantTwp: 'Taiwan Standard (with phrases)',
+  variantHk: 'Hong Kong Traditional',
+  variantT: 'OpenCC Standard Traditional',
+  charCount: '{n} chars',
+  inputPlaceholder: 'Type or paste Chinese text to convert…',
+  outputHint: 'Converted text will appear here in real time',
+  swapTitle: 'Move the output back to the input and reverse the direction',
+  errLibrary: 'Failed to load the conversion engine. Check your network and refresh the page',
+  note: 'Powered by OpenCC dictionaries: the Taiwan variant (twp) applies phrase-level conversion such as 内存→記憶體; the Hong Kong variant (hk) follows Hong Kong conventions; OpenCC Standard (t) converts characters and standard vocabulary only. Punctuation and wording follow the selected variant.',
+}
