@@ -157,6 +157,112 @@ export const TOOL_CATEGORIES = [
       tool('rmbUppercase', '/rmb-uppercase', 'RmbUppercase.vue', '💴'),
     ],
   },
+  {
+    key: 'datetime',
+    icon: '📅',
+    tools: [
+      tool('dateCalculator', '/date-calculator', 'DateCalculator.vue', '📆'),
+      tool('ageCalculator', '/age-calculator', 'AgeCalculator.vue', '🎂'),
+      tool('workdayCalculator', '/workday-calculator', 'WorkdayCalculator.vue', '💼'),
+    ],
+  },
+  {
+    key: 'regextools',
+    icon: '🔍',
+    tools: [
+      tool('regexRailroad', '/regex-railroad', 'RegexRailroad.vue', '🛤️'),
+      tool('regexBuilder', '/regex-builder', 'RegexBuilder.vue', '🧱'),
+      tool('textStructureAnalyzer', '/text-structure-analyzer', 'TextStructureAnalyzer.vue', '🔬'),
+    ],
+  },
+  {
+    key: 'charts',
+    icon: '📊',
+    tools: [
+      tool('mermaidEditor', '/mermaid-editor', 'MermaidEditor.vue', '🧜'),
+      tool('ganttGenerator', '/gantt-generator', 'GanttGenerator.vue', '🗓️'),
+      tool('jsonTreeView', '/json-tree-view', 'JsonTreeView.vue', '🌳'),
+      tool('pivotTable', '/pivot-table', 'PivotTable.vue', '🧮'),
+      tool('flowchartEditor', '/flowchart-editor', 'FlowchartEditor.vue', '🔀'),
+    ],
+  },
+  {
+    key: 'devops',
+    icon: '☸️',
+    tools: [
+      tool('k8sYamlGenerator', '/k8s-yaml-generator', 'K8sYamlGenerator.vue', '🚢'),
+      tool('nginxConfigGenerator', '/nginx-config-generator', 'NginxConfigGenerator.vue', '🏗️'),
+      tool('dockerfileAnalyzer', '/dockerfile-analyzer', 'DockerfileAnalyzer.vue', '🐳'),
+      tool('envManager', '/env-manager', 'EnvManager.vue', '🧪'),
+      tool('helmTemplatePlayground', '/helm-template-playground', 'HelmTemplatePlayground.vue', '⎈'),
+    ],
+  },
+  {
+    key: 'schema',
+    icon: '🗄️',
+    tools: [
+      tool('jsonSchemaGenerator', '/json-schema-generator', 'JsonSchemaGenerator.vue', '📐'),
+      tool('jsonSchemaValidator', '/json-schema-validator', 'JsonSchemaValidator.vue', '✅'),
+      tool('sqlDialectConverter', '/sql-dialect-converter', 'SqlDialectConverter.vue', '🔃'),
+      tool('openapiToPostman', '/openapi-to-postman', 'OpenapiToPostman.vue', '📮'),
+      tool('designTokenConverter', '/design-token-converter', 'DesignTokenConverter.vue', '🖌️'),
+    ],
+  },
+  {
+    key: 'design',
+    icon: '🎨',
+    tools: [
+      tool('googleFontPreview', '/google-font-preview', 'GoogleFontPreview.vue', '🅰️'),
+      tool('colorPaletteExtractor', '/color-palette-extractor', 'ColorPaletteExtractor.vue', '🪄'),
+      tool('fontComparer', '/font-comparer', 'FontComparer.vue', '🔠'),
+    ],
+  },
+  {
+    key: 'webadv',
+    icon: '🛰️',
+    tools: [
+      tool('websocketClient', '/websocket-client', 'WebsocketClient.vue', '🔌'),
+      tool('corsChecker', '/cors-checker', 'CorsChecker.vue', '🚧'),
+      tool('browserFingerprint', '/browser-fingerprint', 'BrowserFingerprint.vue', '🧬'),
+      tool('bookmarkLinkChecker', '/bookmark-link-checker', 'BookmarkLinkChecker.vue', '🔖'),
+      tool('pagePerformanceAnalyzer', '/page-performance-analyzer', 'PagePerformanceAnalyzer.vue', '⚡'),
+    ],
+  },
+  {
+    key: 'codesec',
+    icon: '🧩',
+    tools: [
+      tool('jsObfuscator', '/js-obfuscator', 'JsObfuscator.vue', '🕶️'),
+      tool('jsonPathTester', '/jsonpath-tester', 'JsonPathTester.vue', '🧭'),
+      tool('xpathTester', '/xpath-tester', 'XpathTester.vue', '🧷'),
+      tool('graphqlRestConverter', '/graphql-rest-converter', 'GraphqlRestConverter.vue', '🔮'),
+    ],
+  },
+  {
+    key: 'devices',
+    icon: '🎛️',
+    tools: [
+      tool('deviceInfo', '/device-info', 'DeviceInfo.vue', '📟'),
+      tool('keyboardTester', '/keyboard-tester', 'KeyboardTester.vue', '⌨️'),
+      tool('micVisualizer', '/mic-visualizer', 'MicVisualizer.vue', '🎙️'),
+    ],
+  },
+  {
+    key: 'misc',
+    icon: '✨',
+    tools: [
+      tool('textToSpeech', '/text-to-speech', 'TextToSpeech.vue', '🔊'),
+      tool('identiconGenerator', '/identicon-generator', 'IdenticonGenerator.vue', '👾'),
+      tool('hexFileViewer', '/hex-file-viewer', 'HexFileViewer.vue', '💾'),
+      tool('clipboardHistory', '/clipboard-history', 'ClipboardHistory.vue', '📌'),
+      tool('csvEditor', '/csv-editor', 'CsvEditor.vue', '✏️'),
+      tool('passphraseGenerator', '/passphrase-generator', 'PassphraseGenerator.vue', '🧿'),
+      tool('batchRename', '/batch-rename', 'BatchRename.vue', '📝'),
+      tool('markdownToHtml', '/markdown-to-html', 'MarkdownToHtml.vue', '📤'),
+      tool('htmlToMarkdown', '/html-to-markdown', 'HtmlToMarkdown.vue', '📥'),
+      tool('jsonDiff', '/json-diff', 'JsonDiff.vue', '🟰'),
+    ],
+  },
 ]
 
 /** 所有工具（含分类信息引用），扁平化列表 */
