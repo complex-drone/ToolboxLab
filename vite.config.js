@@ -15,7 +15,15 @@ export default defineConfig({
     port: 5173,
     host: true,
   },
+  optimizeDeps: {
+    // pdfjs-dist 4.x 含 top-level await，依赖预构建同样需要 es2022 目标
+    esbuildOptions: {
+      target: 'es2022',
+    },
+  },
   build: {
+    // pdfjs-dist 4.x 使用 top-level await，需要 es2022 目标
+    target: 'es2022',
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {

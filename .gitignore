@@ -1,8 +1,6 @@
 # ── 依赖 ──────────────────────────────────────
 node_modules/
-# 注意：package-lock.json 当前被忽略。对于部署到生产环境的应用，
-# 通常建议提交 lockfile 以保证可复现安装；如需提交请注释掉下一行。
-# package-lock.json
+# package-lock.json 提交到仓库以保证可复现安装
 pnpm-lock.yaml
 yarn.lock
 
