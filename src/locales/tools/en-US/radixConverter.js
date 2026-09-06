@@ -1,0 +1,15 @@
+export default {
+  title: 'Radix Converter',
+  description: 'Convert numbers between binary, octal, decimal and hexadecimal in real time, with big integers and negatives.',
+  converter: 'Type in any base, the others sync automatically',
+  binary: 'Binary',
+  octal: 'Octal',
+  decimal: 'Decimal',
+  hexadecimal: 'Hexadecimal',
+  placeholder: 'Enter a {base} number',
+  invalidForBase: 'Invalid characters: not a valid {base} number',
+  invalidInput: 'Invalid input format',
+  hexCase: 'Uppercase hexadecimal',
+  grouping: 'Group digits by 4',
+  negativeHint: 'Negatives are supported with a leading "-" in any base; spaces and underscores in the input are ignored.',
+}

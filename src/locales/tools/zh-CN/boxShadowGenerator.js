@@ -1,0 +1,17 @@
+export default {
+  title: 'Box Shadow 生成器',
+  description: '可视化调节多层盒阴影的偏移、模糊、扩散与颜色，实时预览并生成 CSS 代码。',
+  layers: '阴影层',
+  layerName: '阴影 {n}',
+  addLayer: '添加阴影层',
+  layerLimit: '最多支持 8 层阴影',
+  removeLayer: '删除此层',
+  offsetX: 'X 偏移',
+  offsetY: 'Y 偏移',
+  blur: '模糊',
+  spread: '扩散',
+  color: '阴影颜色',
+  opacity: '透明度',
+  inset: '内阴影 inset',
+  cssCode: '生成的 CSS 代码',
+}

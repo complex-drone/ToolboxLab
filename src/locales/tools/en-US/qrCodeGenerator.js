@@ -1,0 +1,18 @@
+export default {
+  title: 'QR Code Generator',
+  description: 'Turn text or a URL into a QR code with custom size, colors and error correction; download as PNG or SVG.',
+  content: 'Content',
+  contentPlaceholder: 'Enter text or URL, e.g. https://example.com',
+  size: 'Size',
+  fgColor: 'Foreground',
+  bgColor: 'Background',
+  ecc: 'Error correction',
+  levelL: 'L - Low (about 7%)',
+  levelM: 'M - Medium (about 15%)',
+  levelQ: 'Q - Quartile (about 25%)',
+  levelH: 'H - High (about 30%)',
+  emptyHint: 'The QR code preview will appear here after you enter some content',
+  renderFailed: 'Failed to generate the QR code; the content may be too long or the colors are invalid',
+  downloadPng: 'Download PNG',
+  downloadSvg: 'Download SVG',
+}

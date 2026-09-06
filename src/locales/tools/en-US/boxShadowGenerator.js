@@ -1,0 +1,17 @@
+export default {
+  title: 'Box Shadow Generator',
+  description: 'Visually tune offset, blur, spread and color for multi-layer box shadows, preview live and generate CSS code.',
+  layers: 'Shadow layers',
+  layerName: 'Shadow {n}',
+  addLayer: 'Add shadow layer',
+  layerLimit: 'Up to 8 shadow layers are supported',
+  removeLayer: 'Remove this layer',
+  offsetX: 'X offset',
+  offsetY: 'Y offset',
+  blur: 'Blur',
+  spread: 'Spread',
+  color: 'Shadow color',
+  opacity: 'Opacity',
+  inset: 'Inset',
+  cssCode: 'Generated CSS code',
+}

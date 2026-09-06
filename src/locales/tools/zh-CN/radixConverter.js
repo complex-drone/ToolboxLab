@@ -1,0 +1,15 @@
+export default {
+  title: '进制转换',
+  description: '在二进制、八进制、十进制、十六进制之间实时互转，支持大整数与负数。',
+  converter: '输入任意进制，其余自动同步',
+  binary: '二进制',
+  octal: '八进制',
+  decimal: '十进制',
+  hexadecimal: '十六进制',
+  placeholder: '输入{base}数字',
+  invalidForBase: '包含无效字符，不是有效的{base}数字',
+  invalidInput: '输入格式不正确',
+  hexCase: '十六进制大写显示',
+  grouping: '每 4 位分组显示',
+  negativeHint: '支持负数：任意进制输入框中使用 - 前缀；输入中的空格与下划线会被自动忽略。',
+}

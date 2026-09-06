@@ -1,0 +1,18 @@
+export default {
+  title: '二维码生成器',
+  description: '输入文本或链接实时生成二维码，可自定义尺寸、颜色与纠错等级，并下载 PNG 或 SVG。',
+  content: '二维码内容',
+  contentPlaceholder: '输入文本或 URL，例如 https://example.com',
+  size: '尺寸',
+  fgColor: '前景色',
+  bgColor: '背景色',
+  ecc: '纠错等级',
+  levelL: 'L - 低（约 7%）',
+  levelM: 'M - 中（约 15%）',
+  levelQ: 'Q - 较高（约 25%）',
+  levelH: 'H - 高（约 30%）',
+  emptyHint: '输入内容后，这里会显示二维码预览',
+  renderFailed: '二维码生成失败，内容可能过长或颜色格式不正确',
+  downloadPng: '下载 PNG',
+  downloadSvg: '下载 SVG',
+}
