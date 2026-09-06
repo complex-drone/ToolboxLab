@@ -11,7 +11,7 @@ export function useToast() {
    * @param {number} duration - 显示时长（毫秒）
    */
   function show(message, type = 'success', duration = 2000) {
-    // ✅ 直接替换为新数组，确保只显示最新的一条 Toast
+    // 直接替换为新数组，确保只显示最新的一条 Toast
     const id = nextId++
     toasts.value = [{ id, message, type, duration }]
 
@@ -32,5 +32,20 @@ export function useToast() {
     toasts.value = []
   }
 
-  return { toasts, show, remove, clearAll }
+  /** 成功提示 */
+  function success(message, duration = 2000) {
+    show(message, 'success', duration)
+  }
+
+  /** 信息提示 */
+  function info(message, duration = 2000) {
+    show(message, 'info', duration)
+  }
+
+  /** 错误提示 */
+  function error(message, duration = 2600) {
+    show(message, 'error', duration)
+  }
+
+  return { toasts, show, success, info, error, remove, clearAll }
 }

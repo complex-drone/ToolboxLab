@@ -3,6 +3,31 @@ import zhCN from './zh-CN.js'
 import enUS from './en-US.js'
 
 /**
+ * 加载各工具的独立语言包片段（src/locales/tools/<lang>/<toolId>.js）
+ * 每个片段挂载到 messages.tools.<toolId> 下
+ * 注意：import.meta.glob 只接受字符串字面量，不能使用模板字符串
+ */
+function loadZhToolMessages() {
+  const modules = import.meta.glob('./tools/zh-CN/*.js', { eager: true })
+  const messages = {}
+  for (const filePath of Object.keys(modules)) {
+    const toolId = filePath.split('/').pop().replace(/\.js$/, '')
+    messages[toolId] = modules[filePath].default
+  }
+  return messages
+}
+
+function loadEnToolMessages() {
+  const modules = import.meta.glob('./tools/en-US/*.js', { eager: true })
+  const messages = {}
+  for (const filePath of Object.keys(modules)) {
+    const toolId = filePath.split('/').pop().replace(/\.js$/, '')
+    messages[toolId] = modules[filePath].default
+  }
+  return messages
+}
+
+/**
  * 确定初始语言
  * 优先级：localStorage > 浏览器语言 > 默认语言 (zh-CN)
  */
@@ -27,14 +52,14 @@ function determineLocale() {
 }
 
 const i18n = createI18n({
-  legacy: false, // ✅ 修复：禁用传统模式，使用组合式 API
+  legacy: false, // 使用组合式 API
   locale: determineLocale(),
   fallbackLocale: 'zh-CN',
   messages: {
-    'zh-CN': zhCN,
-    'en-US': enUS,
+    'zh-CN': { ...zhCN, tools: loadZhToolMessages() },
+    'en-US': { ...enUS, tools: loadEnToolMessages() },
   },
-  allowLinked: false, // ✅ 关键修复：禁用链接语法，避免 !@#$% 等特殊字符被误解析
+  allowLinked: false, // 禁用链接语法，避免 !@#$% 等特殊字符被误解析
 })
 
 export default i18n

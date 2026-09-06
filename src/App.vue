@@ -7,7 +7,7 @@ import LocaleSwitcher from '@/components/LocaleSwitcher.vue'
 import { onMounted, watch } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
-const { t, locale } = useI18n()
+const { t, te, locale } = useI18n()
 const route = useRoute()
 const router = useRouter()
 const { currentLocale, localePath } = useLocalePath()
@@ -15,6 +15,10 @@ const { currentLocale, localePath } = useLocalePath()
 // 站点信息
 const SITE_VERSION = 'v1.0.0'
 const currentYear = new Date().getFullYear()
+
+// 项目仓库与问题反馈入口
+const REPO_URL = 'https://github.com/complex-drone/ToolboxLab'
+const ISSUES_URL = 'https://github.com/complex-drone/ToolboxLab/issues'
 
 // 全局 Toast
 const { toasts, remove } = useToast()
@@ -43,15 +47,20 @@ const pageMetas = {
  */
 function setPageMetadata() {
   const currentRouteName = route.name
-  const currentLocaleValue = currentLocale.value
-  
-  if (!currentRouteName || !pageMetas[currentRouteName]) {
+
+  // 页面元数据：静态页面用 pageMetas，工具页回退到 tools.<name>.title/description
+  const meta = pageMetas[currentRouteName] ||
+    (typeof currentRouteName === 'string' && te(`tools.${currentRouteName}.title`)
+      ? { title: `tools.${currentRouteName}.title`, description: `tools.${currentRouteName}.description` }
+      : null)
+
+  if (!meta) {
     return
   }
-  
-  const meta = pageMetas[currentRouteName]
+
   const titleKey = meta.title
   const descriptionKey = meta.description
+  const currentLocaleValue = currentLocale.value
   
   // 设置标题
   const title = t(titleKey)
@@ -137,9 +146,14 @@ function redirectToLocalePath() {
   }
 }
 
-// 在组件挂载时初始化
-onMounted(() => {
+// 在组件挂载时初始化（等待首次路由解析完成，避免把深链接误判为根路径而重定向）
+onMounted(async () => {
+  await router.isReady()
   redirectToLocalePath()
+  // URL 中的语言前缀优先于 localStorage 偏好（深链接 / 全页加载场景）
+  if (supportedLocales.includes(currentLocale.value) && currentLocale.value !== locale.value) {
+    handleLocaleChange(currentLocale.value)
+  }
   setPageMetadata()
 })
 
@@ -205,7 +219,7 @@ watch(locale, () => {
       <router-view />
     </main>
 
-    <!-- 页脚：版权 + 隐私声明 -->
+    <!-- 页脚：版权 + 隐私声明 + 问题反馈 -->
     <footer class="site-footer">
       <div class="container">
         <p class="copyright">© {{ currentYear }} {{ t('app.name') }} · {{ t('footer.copyright') }}</p>
@@ -223,6 +237,41 @@ watch(locale, () => {
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
           <span>{{ t('footer.privacy') }}</span>
+        </p>
+        <p class="feedback-links">
+          <a
+            class="feedback-link"
+            :href="REPO_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+            <span>{{ t('footer.repo') }}</span>
+          </a>
+          <span class="feedback-divider" aria-hidden="true">·</span>
+          <a
+            class="feedback-link"
+            :href="ISSUES_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            <span>{{ t('footer.feedback') }}</span>
+          </a>
         </p>
       </div>
     </footer>
@@ -325,7 +374,7 @@ input {
 
 .container {
   width: 100%;
-  max-width: 780px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -465,6 +514,39 @@ input {
   width: 12px;
   height: 12px;
   flex-shrink: 0;
+}
+
+/* ---------- 问题反馈链接 ---------- */
+.feedback-links {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.feedback-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.feedback-link:hover {
+  color: #2563eb;
+}
+
+.feedback-link svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.feedback-divider {
+  color: #cbd5e1;
 }
 
 /* ---------- Toast 容器 ---------- */

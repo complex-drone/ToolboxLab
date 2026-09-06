@@ -38,6 +38,8 @@ const { t } = useI18n()
         <span class="tech-tag">Vue 3</span>
         <span class="tech-tag">Vite</span>
         <span class="tech-tag">Vue Router 4</span>
+        <span class="tech-tag">Vue I18n 9</span>
+        <span class="tech-tag">Tailwind CSS</span>
         <span class="tech-tag">Composition API</span>
       </div>
     </div>
