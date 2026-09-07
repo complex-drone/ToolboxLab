@@ -60,3 +60,6 @@ $RECYCLE.BIN/
 *.bak
 *.backup
 *.old
+
+# QA 测试截图证据（体积大，仅本地保留；报告见 docs/QA-*.md）
+qa-evidence/
