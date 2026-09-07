@@ -46,4 +46,8 @@ export default {
   monthLine: '{month}：总 {total} 天，周末 {weekend} 天，节假日 {holiday} 天，工作日 {work} 天',
   copyLine: '{label}：{value}',
   enumSeparator: '、',
+  faq1q: '如何处理法定节假日和调休上班？',
+  faq1a: '在节假日与调休列表中分别添加日期即可：节假日记为额外休息日，调休日记为周末上班，也支持粘贴 JSON 日期数组批量导入或复制导出。',
+  faq2q: '实际休息日是怎么算出来的？',
+  faq2a: '统计包含开始与结束当日，默认周六日为休息日。实际休息日等于周末天数加节假日再减去调休工作日，重叠日期只计一次。',
 }

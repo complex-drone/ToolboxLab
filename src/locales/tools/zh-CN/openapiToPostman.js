@@ -12,4 +12,8 @@ export default {
   generated: 'Postman Collection 已生成',
   outputLabel: 'Postman Collection（v2.1 JSON）',
   outputPlaceholder: '转换结果将显示在这里…',
+  faq1q: '支持哪些版本的接口文档？',
+  faq1a: '支持 OpenAPI 3.x 的 JSON 或 YAML 文档，转换为 Postman Collection v2.1；Swagger 2.0 及更旧的格式暂不支持，需先将文档升级到 3.x。',
+  faq2q: '提示缺少 openapi 或 paths 字段怎么处理？',
+  faq2a: '说明输入未被识别为 OpenAPI 3.x 结构，请确认文档顶层包含 openapi 与 paths 字段，且 JSON 或 YAML 语法正确；若是 Swagger 2.0 文档，需先转换为 3.x 再导入。',
 }

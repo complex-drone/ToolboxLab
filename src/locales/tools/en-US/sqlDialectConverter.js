@@ -36,4 +36,8 @@ export default {
   noteConcat: 'CONCAT with more than two arguments was not converted. Rewrite manually',
   notePgOnly: 'PostgreSQL-specific syntax found (type casts etc.). Review manually',
   escapeHint: 'Conversions are regex based without a full parser. Review the output before use',
+  faq1q: 'Can the converted SQL run in production as is?',
+  faq1a: 'Not recommended. Conversions are regex based without a full syntax parser, so complex statements may be missed. Check every hit in the conversion log and validate in a test environment first.',
+  faq2q: 'What if the log shows no rules were hit?',
+  faq2a: 'It means no convertible patterns were found, or the target dialect already accepts the syntax. PostgreSQL-specific syntax and CONCAT with more than two arguments are not rewritten automatically and need manual edits.',
 }

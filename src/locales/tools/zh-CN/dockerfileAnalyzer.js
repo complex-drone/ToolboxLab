@@ -57,4 +57,8 @@ export default {
   orderTitle: '依赖清单未先于源码拷贝',
   orderSuggestion: '建议先 COPY 依赖清单（如 package.json、requirements.txt）并安装依赖，再拷贝源码，这样源码变更时可以复用依赖层缓存',
   orderPassTitle: '依赖清单先于源码拷贝，缓存友好',
+  faq1q: '粘贴的 Dockerfile 内容会被上传吗？',
+  faq1a: '不会。整个分析在浏览器本地完成，内容不会发送到任何服务器；也因此工具无法读取你本地的文件，.dockerignore 这一项需要自行确认。',
+  faq2q: '评分不高时应优先处理哪些问题？',
+  faq2a: '优先处理错误级别项，例如缺少 FROM、基础镜像未固定版本标签；再按建议改用多阶段构建、声明非 root 用户，并把依赖清单先于源码拷贝以利用缓存。',
 }

@@ -41,4 +41,8 @@ export default {
   noFiles: 'Enter a file name list, or click Example to fill a sample',
   copyMap: 'Copy mapping',
   downloadMap: 'Download mapping',
+  faq1q: 'Does this tool rename the files on my computer?',
+  faq1a: 'No. It only computes new names for the pasted list and detects duplicates. Your real files are untouched; apply the changes yourself with the mapping table.',
+  faq2q: 'How do I use the rename mapping?',
+  faq2a: 'The live preview shows original and new names side by side. Copy the mapping or download it as a txt file to apply in a file manager, a script or other tools.',
 }

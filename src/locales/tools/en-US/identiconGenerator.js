@@ -20,4 +20,8 @@ export default {
   hashFailed: 'SHA-256 is not available in this environment, cannot generate avatars',
   sampleSingle: 'toolboxlab',
   sampleBatch: 'alice\nbob\ncarol\ndave\nerin\nfrank',
+  faq1q: 'Is the text I type uploaded anywhere?',
+  faq1a: 'No. The text is hashed with SHA-256 locally in your browser and the avatar is drawn from that hash. Nothing leaves your device.',
+  faq2q: 'Does the same text always produce the same avatar?',
+  faq2a: 'Yes. The pattern and foreground color come from the SHA-256 hash, so identical input always yields an identical avatar, ideal as a stable identity.',
 }

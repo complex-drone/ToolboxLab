@@ -58,4 +58,8 @@ export default {
   downloadName: '下载 .conf',
   downloadDone: '配置文件已开始下载',
   deleteRow: '删除该行',
+  faq1q: '支持生成哪些场景的 Nginx 配置？',
+  faq1a: '覆盖静态站点、反向代理、负载均衡与 URL 重定向四种场景，可选开启 gzip 压缩；负载均衡支持轮询、最少连接和 IP 哈希三种算法。',
+  faq2q: '启用 SSL 后证书需要自己准备吗？',
+  faq2a: '需要。工具只生成配置片段与证书占位路径，不包含证书的申请与部署，请把路径替换成服务器上的真实文件。启用后会自动附带 HTTP 跳转 HTTPS 的 server 块。',
 }

@@ -28,4 +28,8 @@ export default {
   templates_ganttPlan: '项目甘特图',
   templates_pieShare: '份额饼图',
   templates_classAnimal: '动物类图',
+  faq1q: '支持哪些 Mermaid 图表类型？',
+  faq1a: '支持 Mermaid 原生的流程图、时序图、类图、状态图、ER 图、甘特图、饼图等类型，内置常用模板可一键填入后再修改。',
+  faq2q: '渲染好的图表如何导出？',
+  faq2a: '预览成功后可一键导出 SVG 或 PNG 文件，也可复制 SVG 代码；导出失败时请先确认左侧语法能正常渲染。',
 }

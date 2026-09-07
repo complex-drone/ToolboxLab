@@ -25,4 +25,8 @@ export default {
   matchedCount: '{n} nodes matched',
   noMatch: 'No matching nodes',
   truncated: 'More than 20000 nodes, only the first {n} nodes are rendered',
+  faq1q: 'Will the pasted JSON be uploaded anywhere?',
+  faq1a: 'No. Parsing and search run entirely in your browser and the data never leaves your device. State is kept in memory only and cleared on refresh, so API responses and other sensitive data are safe to inspect.',
+  faq2q: 'Can very large JSON be displayed in full?',
+  faq2a: 'When the total exceeds 20000 nodes, only the first 20000 are rendered and a notice is shown; other features keep working. Trim the data first when inspecting very large files.',
 }

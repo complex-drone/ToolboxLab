@@ -53,4 +53,8 @@ export default {
   statusOkNote: 'Reachable: the server responded, but content health is unknown (the exact HTTP status code cannot be confirmed)',
   statusFailNote: 'Unreachable: the request failed or timed out. The link may be dead, blocked or temporarily down',
   statusSkippedNote: 'Skipped: links that are not http or https (javascript, in-page anchors, empty links), no probe needed',
+  faq1q: 'How is link reachability judged and how accurate is it?',
+  faq1a: 'Due to CORS the browser cannot read cross-domain status codes. Probes use fetch in no-cors mode: an opaque response means reachable, an error or 8 second timeout means unreachable. Exact codes stay unknown, so verify before deleting.',
+  faq2q: 'Which links are skipped without a probe?',
+  faq2a: 'Links that are not http or https, such as javascript links, in-page anchors and empty links, are skipped. Checking runs 6 at a time with an 8 second timeout per link, so keep the page open until it finishes.',
 }

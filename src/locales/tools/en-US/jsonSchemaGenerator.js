@@ -18,4 +18,8 @@ export default {
   generated: 'Schema generated',
   inferHint: 'Rules: objects produce properties and required; arrays merge element types and fall back to anyOf; numbers without a fractional part become integer; nesting is fully supported',
   emptyInputHint: 'Paste some JSON and the Schema will be generated automatically',
+  faq1q: 'How is the Schema inferred from JSON?',
+  faq1a: 'Inference is recursive: objects produce properties, arrays merge their element types and fall back to anyOf on mismatch, and numbers without a fractional part become integer. Nesting at any depth is supported.',
+  faq2q: 'Why is my property description not applied?',
+  faq2a: 'Descriptions use one line per entry in the form path = description. Dot paths target nested properties and brackets address array items. A line is ignored when its path does not match the JSON, so check the spelling of the path.',
 }

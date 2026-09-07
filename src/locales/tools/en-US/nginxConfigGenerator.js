@@ -58,4 +58,8 @@ export default {
   downloadName: 'Download .conf',
   downloadDone: 'Config file download started',
   deleteRow: 'Delete this row',
+  faq1q: 'Which scenarios does the generator cover?',
+  faq1a: 'Four scenarios are covered: static site, reverse proxy, load balancing and URL redirects, with optional gzip compression. Load balancing supports round robin, least connections and IP hash algorithms.',
+  faq2q: 'Do I need to prepare the certificate myself when SSL is enabled?',
+  faq2a: 'Yes. Only config snippets and placeholder certificate paths are generated; issuance and deployment are not included. Replace the paths with real files on your server. An HTTP to HTTPS redirect server block is added automatically.',
 }

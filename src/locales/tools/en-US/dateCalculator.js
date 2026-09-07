@@ -34,4 +34,8 @@ export default {
   useAsEnd: 'Use as end date',
   pickBase: 'Select a base date',
   copyLine: '{label}: {value}',
+  faq1q: 'How does the result change when Exclude weekends is on?',
+  faq1a: 'The main result then counts Monday to Friday only. Both figures, with and without weekends, are always shown side by side, so pick the one that fits your scenario.',
+  faq2q: 'How do I find the date N days before or after a given date?',
+  faq2a: 'Use the Add or Subtract section: pick a base date, enter an amount and a unit of day, week, month or year. Positive numbers add and negative ones subtract, and the result can be set as a start or end date.',
 }

@@ -25,4 +25,8 @@ export default {
   parseError: 'Parse error',
   errAtLine: 'line {line}, column {col}',
   emptyHint: 'Enter some code and press a button above to see the result',
+  faq1q: 'Is my pasted code uploaded anywhere?',
+  faq1a: 'No. Minifying, obfuscating and beautifying all run locally in your browser. The code is never saved or uploaded and is cleared on reload, so internal or business code is safe to process.',
+  faq2q: 'Why does a parse error appear and can obfuscation be reversed?',
+  faq2a: 'Parse errors usually mean the code has syntax errors or uses unsupported syntax, so first confirm it runs locally. Obfuscation is not reversible; beautify only reformats code and cannot restore original names, so keep a source backup.',
 }

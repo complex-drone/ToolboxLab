@@ -48,4 +48,8 @@ export default {
   signPisces: 'Pisces',
   copySummary: 'Copy result',
   copyLine: '{label}: {value}',
+  faq1q: 'How is age handled for people born on Feb 29?',
+  faq1a: 'For a Feb 29 birthday, the birthday and exact age in non-leap years are counted as Feb 28. All other dates are computed precisely to the day from the real year, month and day.',
+  faq2q: 'Are the Chinese zodiac and star sign results reliable?',
+  faq2a: 'The star sign follows the Gregorian birth date and is accurate. The zodiac is approximated from the Gregorian birth year and strictly follows the lunar new year, so treat it as a reference.',
 }

@@ -22,4 +22,8 @@ export default {
   textColor: 'Text color',
   cssSection: 'CSS code',
   previewEmpty: 'No preview text yet',
+  faq1q: 'Where are the fonts loaded from?',
+  faq1a: 'Font files come from the official Google Fonts source and load on demand over the network, with dozens of popular families built in. Check your network and retry when loading fails. Preview text is never uploaded.',
+  faq2q: 'How do I use the chosen font in my own project?',
+  faq2a: 'After tuning size, weight, line height and colors, copy the generated import code and style rules from the CSS section into your stylesheet, then replace the sample text with your real content.',
 }

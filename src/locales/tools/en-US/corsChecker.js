@@ -53,4 +53,8 @@ export default {
   detailMethod: 'Request config',
   browserLimitNote: 'Browser limitation: a page can only read a response when the server replies with Access-Control-Allow-Origin allowing the current origin. This tool therefore reports CORS availability from the browser perspective — "blocked" may mean a missing header, an origin mismatch or a failed preflight. It cannot replace server-side configuration checks.',
   privacyNote: 'Privacy note: when you run a check, the target URL is sent as a real HTTP request to the target server through your network, with headers such as the current page Origin. Results are only shown on this page and are never stored or uploaded by this site',
+  faq1q: 'What does a blocked result mean here?',
+  faq1a: 'It means the server is reachable, but the response lacks an Access-Control-Allow-Origin header for the current origin, so the browser hides the response from page scripts. It does not mean the server is down or misconfigured for sure.',
+  faq2q: 'Is the check request uploaded or logged?',
+  faq2a: 'When you run a check, the target URL is sent as a real HTTP request to the target server through your network, with headers such as the current page Origin. Results are shown on this page only and never stored or uploaded by this site.',
 }

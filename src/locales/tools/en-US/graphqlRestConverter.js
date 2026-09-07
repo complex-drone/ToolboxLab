@@ -31,4 +31,8 @@ export default {
   sampleGql: 'GraphQL sample',
   sampleRest: 'REST sample',
   copyAllPaths: 'Copy all paths',
+  faq1q: 'Are the suggested REST paths final results?',
+  faq1a: 'No. The conversion is a local parse with simple guessing rules: plural forms may be wrong and the innermost fields are placeholders. Fill in real fields from your schema before use and treat the output as a design starting point.',
+  faq2q: 'Which syntax is supported and why do parse errors happen?',
+  faq2a: 'Operation names, nested fields and arguments are supported; fragments and directives are not. On a parse error, check for unclosed brackets or truncated strings and compare with the samples. Parsing runs locally with no network access.',
 }

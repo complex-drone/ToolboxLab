@@ -32,4 +32,8 @@ export default {
   highlightNote: 'Simple text-level highlighting: matches are found by tag name plus the first signature attribute, so identical fragments are all marked and may differ from the actual nodes.',
   truncatedList: 'Too many hits, showing only the first {n}',
   sample: 'Load sample document',
+  faq1q: 'How do queries run and how are documents parsed?',
+  faq1a: 'Queries use the native browser XPath engine locally, with no network access. Parsing is auto-detected: documents that look like HTML use lenient parsing, the rest is parsed as strict XML, so malformed XML fails.',
+  faq2q: 'Why can the highlight differ from the actual hits?',
+  faq2a: 'Highlighting is simple text matching by tag name plus the first signature attribute, so identical fragments are all marked and may not match the real nodes. Treat the result list as the source of truth.',
 }

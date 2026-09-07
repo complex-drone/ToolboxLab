@@ -26,4 +26,8 @@ export default {
   noWordsHint: 'No valid words were counted',
   noSentenceHint: 'No complete sentence detected',
   distinctWords: 'Distinct words',
+  faq1q: 'Is the pasted text uploaded to a server?',
+  faq1a: 'No. All statistics run locally in your browser. The text is neither uploaded nor written to local storage, and it is discarded when the page closes, so private content is safe to paste.',
+  faq2q: 'How are the top words counted?',
+  faq2a: 'Words are tokenized and ranked by frequency, with mixed CJK and Latin text supported. Turn on Exclude stopwords to filter out common function words so the list reflects meaningful keywords.',
 }

@@ -21,4 +21,8 @@ export default {
   errOther: 'Failed to start the microphone: please try again or use another browser',
   idleHint: 'Click Start listening and the live audio graph will appear here',
   privacyNote: 'Privacy note: the captured audio is processed and drawn locally in your browser only. Nothing is recorded, uploaded or stored',
+  faq1q: 'What permissions are needed and when is it unavailable?',
+  faq1a: 'You must grant microphone access in the browser prompt; if denied, re-allow it from the address bar. The tool needs getUserMedia and AudioContext, and works in secure contexts such as HTTPS or localhost.',
+  faq2q: 'Is any audio recorded or uploaded?',
+  faq2a: 'No. Audio is processed and drawn locally in your browser in real time for the waveform, spectrum and volume meter. Nothing is recorded, stored or uploaded, and everything ends when you stop or close the page.',
 }

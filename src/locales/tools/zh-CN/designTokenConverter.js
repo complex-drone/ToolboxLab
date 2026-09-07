@@ -16,4 +16,8 @@ export default {
   errorLabel: '异常',
   parseError: 'JSON 解析失败，请检查输入',
   hint: '分组可任意嵌套；value 为必填，type 缺省时按值推断',
+  faq1q: '支持转换成哪些平台的格式？',
+  faq1a: '输入 W3C 设计令牌 JSON（兼容 value 与 type 简写写法），可一键生成 CSS 变量、SCSS、Android XML 与 iOS plist 四种代码片段。',
+  faq2q: '结果里出现异常提示是什么原因？',
+  faq2a: '通常是某个令牌缺少必填的 value 字段，工具会在列表中标记对应路径，补全后即可正常生成。分组可任意嵌套，type 缺省时会按值自动推断。',
 }

@@ -23,4 +23,8 @@ export default {
   diffSection: 'Differences',
   copyReport: 'Copy diff report',
   noMatch: 'No differences match the current filter',
+  faq1q: 'How are arrays compared?',
+  faq1a: 'Element by element, by index. Length differences appear as added or removed entries instead of treating the whole array as one value, so every path stays precise.',
+  faq2q: 'Can I share the diff results with others?',
+  faq2a: 'Yes. Differences are labeled as added, removed, changed or type changed, with type filters and path search. Copy the diff report and paste it anywhere.',
 }

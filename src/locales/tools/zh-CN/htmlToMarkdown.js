@@ -12,4 +12,8 @@ export default {
   emptyOutput: '转换结果将显示在这里',
   readError: '文件读取失败',
   downloadMd: '下载 .md 文件',
+  faq1q: '表格和代码块能正确转换吗？',
+  faq1a: '可以。转换基于 turndown，并为 GFM 表格与围栏代码块定制了规则；还可勾选移除 script、style 等噪声块并合并多余空行，让结果更干净。',
+  faq2q: '转换是在本地进行的吗？可以上传文件吗？',
+  faq2a: '全程在浏览器本地转换，内容不会上传到任何服务器；可粘贴 HTML 源码，也可直接拖入 .html 文件，完成后可下载为 .md 文件。',
 }

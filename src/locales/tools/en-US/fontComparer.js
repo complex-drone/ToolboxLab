@@ -27,4 +27,8 @@ export default {
   'align-right': 'Right',
   compareSection: 'Comparison preview',
   copyFontCss: 'Copy CSS',
+  faq1q: 'How many fonts can be compared at once?',
+  faq1a: 'Two to four Google Fonts families can be rendered side by side, with a hint when the limit is exceeded. All fonts share the same size, weight, line height and alignment settings for a fair comparison.',
+  faq2q: 'How is this different from the font preview tool?',
+  faq2a: 'The preview tool tunes a single font in depth, while this one focuses on side-by-side comparison: the same text is shown across families, and you can copy the CSS for each font to pick body or heading typefaces.',
 }

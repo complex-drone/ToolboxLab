@@ -18,4 +18,8 @@ export default {
   generated: 'Schema 已生成',
   inferHint: '推断规则：对象生成 properties 与 required；数组合并元素类型，不一致时使用 anyOf；无小数部分的数字推断为 integer；支持任意层级嵌套',
   emptyInputHint: '粘贴 JSON 后将自动生成 Schema',
+  faq1q: 'Schema 是如何从 JSON 推断出来的？',
+  faq1a: '采用递归推断：对象生成 properties，数组合并元素类型，不一致时用 anyOf 兜底；没有小数部分的数字推断为 integer，支持任意层级嵌套。',
+  faq2q: '填写的属性描述为什么没有生效？',
+  faq2a: '描述需按「路径 = 描述」格式每行一条，路径用点号定位层级，数组元素用中括号表示；路径与实际 JSON 不匹配时该行会被忽略，请检查路径拼写。',
 }

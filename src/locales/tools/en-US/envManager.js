@@ -43,4 +43,8 @@ export default {
   statsComments: 'Comments',
   statsInvalid: 'Invalid names',
   statsMissing: 'Missing',
+  faq1q: 'Is my .env content stored or uploaded?',
+  faq1a: 'No. Everything is parsed and edited in browser memory only, never written to disk or sent to a server, and it is cleared on refresh. Still, avoid pasting real production secrets.',
+  faq2q: 'What does the invalid name warning mean?',
+  faq2a: 'Keys must start with an uppercase letter and contain only uppercase letters, digits and underscores. Invalid ones are flagged in the table and can be fixed before export. Comment lines and unrecognized lines are skipped when parsing.',
 }

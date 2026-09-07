@@ -25,4 +25,8 @@ export default {
   unsupported: 'Speech synthesis is not supported in this browser. Please try a recent version of Chrome, Edge or Safari.',
   emptyText: 'Enter some text to speak first',
   speakFailed: 'Failed to start speaking. Adjust the settings and try again.',
+  faq1q: 'Does the tool upload my text to a server?',
+  faq1a: 'No. Speech synthesis runs entirely inside your browser, so the text never leaves your device. It is safe to speak sensitive content.',
+  faq2q: 'Why is the voice list empty or missing my language?',
+  faq2a: 'Voices come from your operating system and browser. Try a recent Chrome, Edge or Safari. If a language has no voice, the default voice is used instead.',
 }

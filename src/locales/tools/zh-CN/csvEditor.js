@@ -32,4 +32,8 @@ export default {
   parseFailed: '解析失败，请检查 CSV 格式',
   tooLargeNoPersist: '内容超过 100KB，本次编辑不会保存到浏览器本地',
   sampleData: 'name,age,city\nAlice,30,Beijing\nBob,25,Shanghai\n"Carol, Jr",28,New York\nDavid,35,"Road\n12, Paris"',
+  faq1q: '支持哪些分隔符？有数据量上限吗？',
+  faq1a: '支持逗号、制表符、分号与竖线符号，可自动识别；表格上限 500 行 x 50 列，超出会自动截断，超过 100KB 的内容不再保存到浏览器本地。',
+  faq2q: '导出的 CSV 能被 Excel 等软件正常打开吗？',
+  faq2a: '可以。导出遵循 CSV 标准，包含逗号、引号或换行的单元格会自动加引号转义；同一表格也可一键导出为 JSON 数组。',
 }

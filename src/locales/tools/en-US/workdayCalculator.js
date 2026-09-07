@@ -46,4 +46,8 @@ export default {
   monthLine: '{month}: total {total} days, weekend {weekend}, holidays {holiday}, workdays {work}',
   copyLine: '{label}: {value}',
   enumSeparator: ', ',
+  faq1q: 'How do I add public holidays or makeup workdays?',
+  faq1a: 'Add dates under the holidays and makeup lists: holidays count as extra rest days and makeup dates as working weekends. You can also paste a JSON date array to import in bulk, or copy the lists as JSON.',
+  faq2q: 'How are actual rest days calculated?',
+  faq2a: 'Both the start and end dates are included and Saturdays and Sundays are rest days by default. Actual rest days equal weekends plus holidays minus makeup workdays, and overlapping dates are counted only once.',
 }

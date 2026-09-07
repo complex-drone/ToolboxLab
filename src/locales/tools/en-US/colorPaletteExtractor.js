@@ -21,4 +21,8 @@ export default {
   copySchemeVars: 'Copy scheme CSS variables',
   copyAllHex: 'Copy all HEX',
   copyAllVars: 'Copy all CSS variables',
+  faq1q: 'Are uploaded images sent to a server?',
+  faq1a: 'No. Images are sampled and analyzed locally in the browser through a canvas, and all color extraction happens on your machine, so unpublished design screenshots are safe to process.',
+  faq2q: 'Can the number of extracted colors be changed?',
+  faq2a: 'Yes. The color count option controls the result, using median cut quantization. Click any swatch to copy its HEX value, and generate complementary, triadic and analogous schemes from the dominant color.',
 }

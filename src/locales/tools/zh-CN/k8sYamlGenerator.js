@@ -75,4 +75,8 @@ export default {
   downloadName: '下载 .yaml',
   downloadDone: 'YAML 文件已开始下载',
   deleteRow: '删除该行',
+  faq1q: '支持生成哪些 Kubernetes 资源？',
+  faq1a: '支持 Deployment、Service、Ingress、ConfigMap 和 Secret 五类资源，通过切换标签页分别配置，端口映射、环境变量、标签与资源限制等字段会按资源类型动态展示。',
+  faq2q: '生成的 YAML 能直接应用到集群吗？',
+  faq2a: '生成的 YAML 结构合法，可保存后用 kubectl apply 部署。但镜像地址、副本数等需按实际环境确认，建议先执行 kubectl apply --dry-run=client 验证，再在测试集群试运行。',
 }

@@ -59,4 +59,8 @@ export default {
   typeClass: 'Class',
   typeGroup: 'Group',
   typeAlt: 'Alternation',
+  faq1q: 'Can I use this tool without knowing regex syntax?',
+  faq1a: 'Yes. Click blocks such as digit, letter, quantifier and group to assemble a pattern without memorizing metacharacters. Literal text is escaped automatically, and preset templates generate common regexes in one click.',
+  faq2q: 'How does the highlighted match test work?',
+  faq2a: 'After you enter test text, the tool matches it with the generated regex in real time, highlights every hit and shows the match count, so you can verify the pattern at once.',
 }

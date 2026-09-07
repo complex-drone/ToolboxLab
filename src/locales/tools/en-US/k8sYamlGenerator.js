@@ -75,4 +75,8 @@ export default {
   downloadName: 'Download .yaml',
   downloadDone: 'YAML file download started',
   deleteRow: 'Delete this row',
+  faq1q: 'Which Kubernetes resources are supported?',
+  faq1a: 'Five resource types are supported: Deployment, Service, Ingress, ConfigMap and Secret. Switch the tabs to configure each one, and fields like ports, environment variables, labels and resource limits are shown per type.',
+  faq2q: 'Can the generated YAML be applied to a cluster directly?',
+  faq2a: 'The YAML is structurally valid and can be saved and deployed with kubectl apply. Still, confirm the image address and replicas for your environment, and try kubectl apply --dry-run=client and a test cluster first.',
 }

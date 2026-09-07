@@ -32,4 +32,8 @@ export default {
   parseFailed: 'Failed to parse. Please check the CSV format',
   tooLargeNoPersist: 'Content exceeds 100KB, so this edit will not be saved to browser storage',
   sampleData: 'name,age,city\nAlice,30,Beijing\nBob,25,Shanghai\n"Carol, Jr",28,New York\nDavid,35,"Road\n12, Paris"',
+  faq1q: 'Which delimiters are supported? Is there a size limit?',
+  faq1a: 'Comma, tab, semicolon and pipe are supported with auto-detection. Tables are capped at 500 rows x 50 columns; content beyond 100KB is not saved to browser storage.',
+  faq2q: 'Will the exported CSV open correctly in Excel?',
+  faq2a: 'Yes. Export follows the CSV standard and quotes cells containing commas, quotes or line breaks automatically. The same table can also be exported as JSON.',
 }

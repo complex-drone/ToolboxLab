@@ -37,4 +37,8 @@ export default {
   kwConst: '值必须等于',
   kwChars: '个字符',
   kwUnit: '个',
+  faq1q: '待验证的数据支持哪些格式？',
+  faq1a: '支持 JSON 和 YAML，工具会自动识别格式；Schema 本身需为 JSON。验证基于 AJV，覆盖 type、required、enum、format 等常用关键字。',
+  faq2q: '验证失败后如何定位问题？',
+  faq2a: '结果表格会列出每条错误的实例路径、期望值与实际值，并标注对应的 Schema 路径，可按路径逐条修正数据；若 Schema 自身无法编译，会先提示修正 Schema。',
 }

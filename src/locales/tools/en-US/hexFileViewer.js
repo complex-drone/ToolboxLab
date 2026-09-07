@@ -51,4 +51,8 @@ export default {
     ico: 'ICO icon',
     bmp: 'BMP image',
   },
+  faq1q: 'Are uploaded files sent to a server?',
+  faq1a: 'No. Files are read locally by the browser and shown in chunks. Nothing is uploaded, so it is safe to inspect files from unknown sources.',
+  faq2q: 'Which formats are detected? How are large files handled?',
+  faq2a: 'File headers reveal common types such as JPEG, PNG, PDF, ZIP, MP4 and SQLite. Content loads in 4KB chunks with a 64KB view limit; use offset jump to reach any region.',
 }

@@ -32,4 +32,8 @@ export default {
   warnRangeTarget: '第 {line} 行的 range 目标不是数组或对象',
   warnUnknownFn: '第 {line} 行暂不支持函数 {fn}，已原样输出',
   undefinedRef: '未定义: {path}',
+  faq1q: '支持哪些 Helm 模板语法？',
+  faq1a: '支持 Values 引用、Release 与 Chart 等内置对象，以及 if、range、else、end 等常用控制结构；暂不支持的函数会原样输出并给出警告，适合调试模板片段。',
+  faq2q: '渲染结果和真实 helm 命令完全一致吗？',
+  faq2a: '它是浏览器内的模拟渲染，覆盖常用语法而非完整引擎，未定义变量会渲染为占位标记。日常调试够用，发布前仍建议用 helm template 或 helm lint 做最终确认。',
 }

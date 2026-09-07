@@ -24,4 +24,8 @@ export default {
   timeMin: 'min ago',
   timeHour: 'h ago',
   timeDay: 'd ago',
+  faq1q: 'Where is the clipboard history stored?',
+  faq1a: 'Only in this browser localStorage, capped at 30 entries, and never uploaded to any server. Clear the history or browser data to remove everything.',
+  faq2q: 'Are copies made in other apps or pages recorded too?',
+  faq2a: 'No. Browser security limits capture to copies made on this page. System-wide clipboard history cannot be read, and copies elsewhere stay unrecorded.',
 }

@@ -23,4 +23,8 @@ export default {
   unsupportedHint: 'Rectangle nodes mark syntax that is not supported yet',
   copySvgCode: 'Copy SVG code',
   exportSvg: 'Export SVG',
+  faq1q: 'When is a railroad diagram useful for regex?',
+  faq1a: 'When reading a complex pattern, the diagram turns nested structure into visible branches and paths, far easier than decoding metacharacters one by one. It suits code review, teaching and debugging.',
+  faq2q: 'How can I export the generated diagram?',
+  faq2a: 'Download it as an SVG file with one click, or copy the SVG code and paste it into a web page or document. The diagram updates in real time while you type.',
 }

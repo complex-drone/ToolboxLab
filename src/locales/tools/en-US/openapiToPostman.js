@@ -12,4 +12,8 @@ export default {
   generated: 'Postman Collection generated',
   outputLabel: 'Postman Collection (v2.1 JSON)',
   outputPlaceholder: 'The converted result will appear here…',
+  faq1q: 'Which API document versions are supported?',
+  faq1a: 'OpenAPI 3.x documents in JSON or YAML are supported and converted to Postman Collection v2.1. Swagger 2.0 and older formats are not supported yet, so upgrade the document to 3.x first.',
+  faq2q: 'What does the missing openapi or paths field error mean?',
+  faq2a: 'The input was not recognized as an OpenAPI 3.x document. Make sure the top level contains the openapi and paths fields and the JSON or YAML syntax is valid. Swagger 2.0 documents need to be converted to 3.x first.',
 }

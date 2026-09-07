@@ -20,4 +20,8 @@ export default {
   hashFailed: '当前环境不支持 SHA-256 计算，无法生成头像',
   sampleSingle: 'toolboxlab',
   sampleBatch: 'alice\nbob\ncarol\ndave\nerin\nfrank',
+  faq1q: '生成头像时输入的文本会被上传吗？',
+  faq1a: '不会。文本仅在浏览器本地进行 SHA-256 哈希运算，头像由哈希值绘制而成，文本和图片都不会离开你的设备。',
+  faq2q: '同一文本每次生成的头像都一样吗？',
+  faq2a: '一样。头像图案与前景色由 SHA-256 哈希决定，相同输入永远得到相同结果，适合作为账号或项目的稳定视觉标识。',
 }

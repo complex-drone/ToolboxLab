@@ -13,4 +13,8 @@ export default {
   emptyOutput: 'The conversion result will appear here',
   readError: 'Failed to read the file',
   downloadMd: 'Download .md file',
+  faq1q: 'Are tables and code blocks converted correctly?',
+  faq1a: 'Yes. Conversion uses turndown with custom rules for GFM tables and fenced code blocks. You can also strip script and style noise and collapse blank lines.',
+  faq2q: 'Does the conversion run locally? Can I use a file?',
+  faq2a: 'Everything runs in your browser and nothing is uploaded. Paste HTML source or drop an .html file, then download the result as a .md file.',
 }

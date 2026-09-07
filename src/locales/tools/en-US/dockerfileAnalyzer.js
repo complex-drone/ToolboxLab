@@ -57,4 +57,8 @@ export default {
   orderTitle: 'Dependency manifests are copied after source code',
   orderSuggestion: 'Copy dependency manifests (such as package.json or requirements.txt) and install dependencies first, then copy the source, so the dependency layer stays cached when only source changes',
   orderPassTitle: 'Dependency manifests come before source code, cache friendly',
+  faq1q: 'Is the pasted Dockerfile uploaded anywhere?',
+  faq1a: 'No. The analysis runs entirely in your browser and nothing is sent to a server. For the same reason the tool cannot read local files, so the .dockerignore check needs your own confirmation.',
+  faq2q: 'Which issues should I fix first when the score is low?',
+  faq2a: 'Start with error-level findings such as a missing FROM or an unpinned base image tag. Then follow the advice to adopt a multi-stage build, declare a non-root user, and copy dependency manifests before source code for better caching.',
 }

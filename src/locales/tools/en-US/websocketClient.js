@@ -42,4 +42,8 @@ export default {
   errSendFailed: 'Failed to send the message, the connection may be broken',
   errNotConnected: 'Connect to a server before sending messages',
   errEmptyLog: 'No logs to export yet',
+  faq1q: 'How does the heartbeat check work and why does it show unresponsive?',
+  faq1a: 'Browsers cannot send protocol-level ping frames, so a text message "ping" is sent at intervals; after 30 seconds without any message the connection is marked unresponsive. Servers that never reply may look unresponsive while connected.',
+  faq2q: 'What are common reasons a connection fails?',
+  faq2a: 'Check the URL, whether the server is running and your network. From an HTTPS page the browser blocks insecure ws:// connections, so use wss:// instead. Logs are kept in page memory only and never uploaded.',
 }

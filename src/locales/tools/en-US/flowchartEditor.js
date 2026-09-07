@@ -33,4 +33,8 @@ export default {
   tipLink: 'Press a round port handle on a node edge and release over another node to create an arrowed polyline',
   tipSelect: 'Click a node or edge to select, then press Delete or the delete button to remove it',
   tipUndo: 'Selection is cleared before PNG export, and at least 10 undo steps are kept',
+  faq1q: 'Can I save a flowchart and edit it later?',
+  faq1a: 'Yes. Export the graph as JSON to save it, then import that JSON to restore the canvas and keep editing. You can also export a PNG to drop into documents or chats.',
+  faq2q: 'How do I connect two nodes with an edge?',
+  faq2a: 'Press the round port handle on a node edge, drag onto another node and release to create an arrowed polyline. Duplicate edges between the same pair of nodes are not allowed.',
 }

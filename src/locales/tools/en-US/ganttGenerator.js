@@ -28,4 +28,8 @@ export default {
   exportSvg: 'Export SVG',
   exportPng: 'Export PNG',
   exportFailed: 'Export failed, please try again',
+  faq1q: 'Are parent and child task levels supported?',
+  faq1a: 'The gantt library has no native hierarchy. The tool lists parent and child tasks in order with indentation, child tasks render as normal bars, and a parent row shows the aggregated date range of its children.',
+  faq2q: 'How do I adjust schedules and export the chart?',
+  faq2a: 'Drag a bar to change its start date, drag its ends to change the duration and drag the progress dot to set progress; edits sync back to the list. Then export as SVG or a 2x PNG for documents.',
 }

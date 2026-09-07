@@ -30,4 +30,8 @@ export default {
   rowsStat: 'rows',
   colsStat: 'cols',
   emptyHint: 'Paste or upload data to build the pivot result automatically',
+  faq1q: 'Which data formats are supported for input?',
+  faq1a: 'Paste CSV or a JSON array of objects with automatic format detection, or upload a .csv or .json file in UTF-8. The CSV needs a header row and the JSON must be an array of objects.',
+  faq2q: 'Why did the sum turn into a count?',
+  faq2a: 'When the value field is missing or contains non-numeric data, sum-like aggregations cannot run and fall back to count with a notice on screen. Fix the data or pick another field, then rebuild the pivot.',
 }

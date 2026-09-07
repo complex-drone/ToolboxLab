@@ -28,4 +28,8 @@ export default {
   templates_ganttPlan: 'Project gantt',
   templates_pieShare: 'Share pie',
   templates_classAnimal: 'Animal classes',
+  faq1q: 'Which Mermaid diagram types are supported?',
+  faq1a: 'Native Mermaid types such as flowchart, sequence, class, state, ER, gantt and pie are supported. Built-in templates cover common cases and can be inserted with one click before editing.',
+  faq2q: 'How do I export a rendered diagram?',
+  faq2a: 'Once the preview renders, export it as an SVG or PNG file with one click, or copy the SVG code. If export fails, check that the syntax on the left renders correctly first.',
 }

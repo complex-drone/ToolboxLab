@@ -16,4 +16,8 @@ export default {
   errorLabel: 'Invalid',
   parseError: 'Failed to parse JSON. Check the input',
   hint: 'Groups can be nested arbitrarily; value is required, and type defaults to an inferred one',
+  faq1q: 'Which platform formats can be generated?',
+  faq1a: 'It parses W3C design token JSON (the value and type shorthand is supported) and generates CSS variables, SCSS, Android XML and iOS plist snippets in one click.',
+  faq2q: 'Why does an invalid token appear in the result?',
+  faq2a: 'Usually a token is missing its required value field, and the table flags the affected path. Fill it in to generate normally. Groups can nest to any depth, and type is inferred from the value when omitted.',
 }

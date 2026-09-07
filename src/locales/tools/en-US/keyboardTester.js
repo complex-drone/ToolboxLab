@@ -17,4 +17,8 @@ export default {
   unsupported: 'Keyboard events are not supported in this environment',
   spaceKey: 'Space',
   pressHint: 'Press any key on your keyboard and the matching keycap will light up',
+  faq1q: 'Why do combinations like Ctrl plus W do nothing?',
+  faq1a: 'Shortcuts such as Ctrl plus W or Ctrl plus T are reserved by the browser itself, so this page never receives those key events. That is expected behavior; just try combinations that do not conflict.',
+  faq2q: 'What is the difference between key and code, and does Dvorak remap keys?',
+  faq2a: 'key is the character produced by your input and changes with the system layout, while code is the physical key position regardless of layout. Switching to Dvorak only changes the keycap labels on this page, never your system keyboard layout.',
 }

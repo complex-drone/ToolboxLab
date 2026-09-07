@@ -37,4 +37,8 @@ export default {
   kwConst: 'value must equal',
   kwChars: 'characters',
   kwUnit: '',
+  faq1q: 'Which data formats are supported?',
+  faq1a: 'Both JSON and YAML are supported and detected automatically, while the Schema itself must be JSON. Validation is powered by AJV and covers common keywords such as type, required, enum and format.',
+  faq2q: 'How do I locate issues after a failed validation?',
+  faq2a: 'The result table lists each error with its instance path, expected and actual values, plus the Schema path, so you can fix the data item by item. If the Schema itself fails to compile, fix it first as prompted.',
 }

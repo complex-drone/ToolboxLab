@@ -32,4 +32,8 @@ export default {
   warnRangeTarget: 'The range target at line {line} is not an array or object',
   warnUnknownFn: 'Function {fn} at line {line} is not supported and is emitted as-is',
   undefinedRef: 'Undefined: {path}',
+  faq1q: 'Which Helm template features are supported?',
+  faq1a: 'Values references, built-in objects such as Release and Chart, and common control structures like if, range, else and end are supported. Unsupported functions are emitted as-is with a warning, which suits snippet debugging.',
+  faq2q: 'Is the rendering identical to the real helm command?',
+  faq2a: 'It is a browser-side simulation covering common syntax, not the full engine, and undefined variables render as placeholders. Good for daily debugging, but run helm template or helm lint before releasing a chart.',
 }

@@ -44,4 +44,8 @@ export default {
   colorDepthPart: 'Depth',
   errHashFailed: 'Failed to compute the fingerprint hash',
   privacyNote: 'Privacy note: every check runs entirely in your browser. Results are not persisted, not uploaded, and disappear when you reload the page. Canvas, WebGL, audio and font fingerprints may change with browser versions, hardware or system fonts, and do not represent a unique device identifier',
+  faq1q: 'Does the detection use the network or store data?',
+  faq1a: 'No. All fingerprint items are collected locally in your browser with no network requests. Results are not persisted or uploaded and disappear on reload. The overall hash is computed locally with Web Crypto SHA-256 from the collected items.',
+  faq2q: 'Why can the fingerprint differ across browsers or over time?',
+  faq2a: 'Items like Canvas, WebGL, audio and fonts depend on the browser version, hardware and system fonts, so any change alters the overall hash. The fingerprint reflects your current browser environment, not a unique device identifier.',
 }

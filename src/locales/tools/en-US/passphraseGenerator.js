@@ -35,4 +35,8 @@ export default {
   hint_extreme: 'Extremely strong. Suitable for master passwords and keys',
   wordlistInfo:
     'Wordlist: EFF Large Wordlist with 7776 English words (CC BY 3.0). Randomness comes from crypto rejection sampling',
+  faq1q: 'How is the strength of a passphrase guaranteed?',
+  faq1a: 'Words come from the EFF Large Wordlist of 7776 entries, about 12.93 bit of entropy each. Randomness uses crypto rejection sampling without bias. More words mean higher entropy.',
+  faq2q: 'Are generated passphrases uploaded or saved?',
+  faq2a: 'No. Generation happens entirely in your browser. Results are not uploaded to any server and are not stored automatically. Copy them somewhere safe right away.',
 }

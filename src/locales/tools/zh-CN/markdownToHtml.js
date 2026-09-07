@@ -9,4 +9,8 @@ export default {
   copyHtml: '复制 HTML 源码',
   copyText: '复制纯文本',
   renderError: '渲染失败',
+  faq1q: '导出的 HTML 文件包含样式吗？',
+  faq1a: '包含。导出的是独立 HTML 文档，已内嵌排版样式与代码高亮样式，双击即可在浏览器中打开查看，无需额外引入 CSS 文件。',
+  faq2q: '支持哪些 Markdown 语法？',
+  faq2a: '支持 GFM 表格、任务列表、删除线与代码块高亮等常用语法；编辑时实时预览渲染效果，也可复制 HTML 源码或纯文本。',
 }

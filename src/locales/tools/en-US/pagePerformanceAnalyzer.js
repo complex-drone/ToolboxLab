@@ -50,4 +50,8 @@ export default {
   allGood: 'All metrics are within the recommended range, keep it up',
   scopeNoteTitle: 'Analysis scope',
   scopeNote: 'Due to the browser security model, a web page cannot read performance data of pages on other sites, so this tool analyzes the current page of this site. Refresh the page and run the analysis again to cover the full loading process',
+  faq1q: 'Can it analyze pages on any website?',
+  faq1a: 'No. The browser security model prevents a page from reading performance data of other sites, so this tool analyzes the current page of this site only. To cover the full loading process, refresh the page and start the analysis right away.',
+  faq2q: 'How is the score computed and why can LCP be missing?',
+  faq2a: 'TTFB, FCP, LCP and CLS are worth 25 points each and decrease linearly past the recommended value. LCP can usually only be measured during page loading, so it is missing when loading finished long ago or the browser lacks support.',
 }

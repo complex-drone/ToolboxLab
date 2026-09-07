@@ -41,4 +41,8 @@ export default {
   chargingYes: 'Charging',
   chargingNo: 'Discharging',
   localNote: 'All values are read locally. Click the button next to an item to copy it, or copy everything at once',
+  faq1q: 'Will this information be uploaded or used for tracking?',
+  faq1a: 'No. Every value is read locally by your browser and shown in groups. This site stores and uploads nothing. You can copy any item or everything at once, and all data is discarded when you reload.',
+  faq2q: 'Why do some items show not supported and how accurate are values?',
+  faq2a: 'Items like battery and network type rely on non-standard APIs and may be missing in desktop browsers or private modes. Downlink and round-trip time are rough estimates, and GPU details come from the renderer string, for reference only.',
 }

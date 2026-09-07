@@ -26,4 +26,8 @@ export default {
   historyEmpty: 'No history yet',
   clearHistory: 'Clear history',
   sample: 'Load sample data',
+  faq1q: 'Where is the query history stored and is my data safe?',
+  faq1a: 'All queries run locally in your browser, so JSON data and expressions are never uploaded. History is kept only in the local storage of this browser, capped at 10 entries, and can be cleared anytime.',
+  faq2q: 'What should I check when nothing matches?',
+  faq2a: 'First make sure the JSON parses without errors, then check the expression syntax such as array indexes, slices and filter conditions. Hits on objects or arrays are not highlighted, but the result list still shows their structured values.',
 }
