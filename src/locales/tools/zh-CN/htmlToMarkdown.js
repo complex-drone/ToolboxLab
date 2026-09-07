@@ -1,0 +1,15 @@
+export default {
+  title: 'HTML 转 Markdown',
+  description: '粘贴或上传 HTML，使用 turndown 转换为整洁的 Markdown，自实现 GFM 表格与围栏代码块，支持噪声清理与预览比对',
+  inputSection: 'HTML 输入',
+  inputPlaceholder: '在此粘贴 HTML 内容…',
+  uploadHint: '拖拽 .html 文件到此处，或点击选择',
+  cleanNoise: '移除脚本与样式块（script、style、noscript）',
+  collapseBlank: '合并多余空行',
+  convertBtn: '转换',
+  tabMarkdown: 'Markdown 结果',
+  tabPreview: '渲染预览',
+  emptyOutput: '转换结果将显示在这里',
+  readError: '文件读取失败',
+  downloadMd: '下载 .md 文件',
+}
