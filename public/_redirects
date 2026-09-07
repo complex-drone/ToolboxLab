@@ -26,5 +26,5 @@ http://toolboxlab.pages.dev/* https://toolboxlab.pages.dev/:splat 301
 /about-us-en /en-US/about 301
 /index.html /zh-CN/ 301
 
-# 404 回退
-/* /zh-CN/ 404
+# 404：已知路由在构建时已预渲染为静态文件；未知路径由 Cloudflare Pages
+# 以 404 状态返回 dist/404.html，避免 SPA 软 404（此处不再配置 /* 回退规则）

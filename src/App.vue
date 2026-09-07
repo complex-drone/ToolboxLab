@@ -90,31 +90,48 @@ function setPageMetadata() {
     document.head.appendChild(canonicalEl)
   }
   
-  // 设置 hreflang 标签
+  // 设置 hreflang 标签（x-default 指向默认语言 zh-CN，而非当前页）
   const hreflangLinks = document.querySelectorAll('link[rel="alternate"][hreflang]')
   hreflangLinks.forEach(el => el.remove())
-  
+
+  const cleanedPath = route.path.replace(`/${currentLocaleValue}`, '') || '/'
+  const origin = window.location.origin
+  const zhUrl = `${origin}/zh-CN${cleanedPath}`
+
   supportedLocales.forEach(lang => {
-    const href = lang === currentLocaleValue 
-      ? canonicalUrl 
-      : `${window.location.origin}/${lang}${route.path.replace(`/${currentLocaleValue}`, '')}`
-    
     const link = document.createElement('link')
     link.rel = 'alternate'
     link.hreflang = lang === 'zh-CN' ? 'zh' : lang
-    link.href = href
-    
-    // 添加 x-default
-    if (lang === 'zh-CN') {
-      const xDefaultLink = document.createElement('link')
-      xDefaultLink.rel = 'alternate'
-      xDefaultLink.hreflang = 'x-default'
-      xDefaultLink.href = canonicalUrl
-      document.head.appendChild(xDefaultLink)
-    }
-    
+    link.href = lang === currentLocaleValue ? canonicalUrl : `${origin}/${lang}${cleanedPath}`
     document.head.appendChild(link)
   })
+
+  const xDefaultLink = document.createElement('link')
+  xDefaultLink.rel = 'alternate'
+  xDefaultLink.hreflang = 'x-default'
+  xDefaultLink.href = zhUrl
+  document.head.appendChild(xDefaultLink)
+
+  // 同步 Open Graph / Twitter 标签，保证客户端导航后分享信息一致
+  updateMetaAttr('property', 'og:title', title)
+  updateMetaAttr('property', 'og:description', description)
+  updateMetaAttr('property', 'og:url', canonicalUrl)
+  updateMetaAttr('property', 'og:locale', currentLocaleValue)
+  updateMetaAttr('name', 'twitter:title', title)
+  updateMetaAttr('name', 'twitter:description', description)
+}
+
+/**
+ * 更新或创建 meta 标签（供 OG / Twitter 使用）
+ */
+function updateMetaAttr(attr, key, content) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attr, key)
+    document.head.appendChild(el)
+  }
+  el.setAttribute('content', content)
 }
 
 /**
