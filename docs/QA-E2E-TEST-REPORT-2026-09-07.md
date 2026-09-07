@@ -117,3 +117,33 @@
 遗留风险：① BUG-1（SPA 站内导航元数据不刷新）对 SEO 影响被预渲染架构大部分对冲，仍建议本周修复；② 文件上传类工具（PDF/图片/Excel/EXIF/校验和等 15+ 项）的上传交互与 Edge/Firefox/Safari 真机兼容性因运行时限制未覆盖，建议在常规浏览器中人工补测或引入支持文件上传的 Playwright 流水线；③ 生肖按公历年近似为产品既有口径（UI 已注明），如需农历精确需引入农历库。
 
 > 截图证据：`qa-evidence/t01~t33*.png`；巡检原始数据：`qa-evidence/sweep.json`、`sweep_en.json`、`urls.json`。
+
+---
+
+## 7. 修复回归验证（2026-09-07 20:30，commit 2de47db → 1be4c3c）
+
+回归范围：`npm test` + dev(5173)/preview(4173) 浏览器复验 + 重新构建产物检查。dev server 已重启以排除 HMR 陈旧模块。
+
+| 问题 | 修复提交 | 回归结果 |
+|------|----------|----------|
+| BUG-1 SPA 同语言导航元数据 | f5ceb15 | ✅ **核心修复生效**：首页→工具、相关工具互跳、工具→首页，title/canonical/og:title/description 全部正确刷新（生产构建验证）。⚠️ 残留：首页切换语言后 title 不跟随（见 V-1） |
+| BUG-2 /password 缺 H1 | 0f8acef | ✅ 双语言 `main h1` 均存在（密码生成器 / Password Generator），样式正常（v2_password_h1.png） |
+| BUG-3 移动端触控目标 | be5ddcc | ✅ chip 类按钮 22px→36px（缩进/结果切换/排除周末等），满足 WCAG 2.5.8 AA（24px）；44px AAA 属可选改进 |
+| OBS-4 K8s Service selector | 33c661e | ✅ 双路径验证：默认表单预填 `app: my-app` 标签行 → selector 正确；清空标签行后回退生成 `selector: app: my-app-svc`（资源名）（v5_k8s_empty_labels.png） |
+| OBS-7 README 148→152 | 2ea6fba | ✅ 已更新 |
+| P3 skip-link（新增） | be5ddcc | ✅ 首个 Tab 聚焦"跳到主要内容"（带焦点环可见），回车跳转 `#main` 生效（v4_skip_link.png） |
+
+构建回归：`npm run build` 51.3s 成功，283 页预渲染；预渲染首页 title 已品牌化（zh: `ToolboxLab - 139 个免费在线工具` / en: `ToolboxLab - 139 Free Online Tools`）；password 静态页含 h1；sitemap 141×2 正常。
+
+### 回归新发现
+
+| 编号 | 现象 | 严重度 | 说明 |
+|------|------|--------|------|
+| V-1 | `pageMetas` 仅含 `'home'` 键，而本地化首页实际路由名为 `'home-locale'`（`/:locale?`），导致：① 首页切换语言后 title 不跟随（保持中文标题）；② SPA 返回首页场景因根路由 `/` 命中 `'home'` 而恰好正确 | P3 | 一行修复：`pageMetas` 增加 `'home-locale'` 键（或路由名统一）。生产直载不受影响（静态壳 title 正确且早退不覆盖） |
+| V-2 | dev server 长时间运行时对 locale/App.vue 的 HMR 更新不完整，需重启才生效 | 环境备注 | 非产品缺陷；建议修复验证时重启 dev server |
+
+**回归结论**：4 项修复全部生效、152 个单元测试无回归、构建产物同步正确，可合入/发布。V-1 为一行遗留改进，不阻塞。
+
+### V-1 修复（2026-09-07 21:10，commit 33fcb7c）
+
+`pageMetas` 补齐 `'home-locale'` 键（与 `'home'` 同用 `app.seoTitle`）。回归验证：`/zh-CN/` 首页经语言下拉切换至英文后，title 正确变为 "ToolboxLab - 139 Free Online Tools"、canonical 同步 `/en-US/`；SPA 返回首页标题保持正确；152 项测试无回归。V-2 为开发环境备注，无需改码。至此本报告全部可修问题关闭。
