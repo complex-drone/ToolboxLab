@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-sitemap.js",
+    "build": "vite build && node scripts/generate-sitemap.js && node scripts/prerender.mjs",
     "build:prod": "vite build --mode production && node scripts/generate-sitemap.js",
     "preview": "vite preview",
     "validate:analytics": "node scripts/validate-analytics.js",
