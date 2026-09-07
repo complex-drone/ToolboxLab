@@ -145,14 +145,17 @@ function pageInfo(locale, route) {
 }
 
 function routesFor(locale) {
+  // 输出为扁平 .html 文件（date-calculator.html），Cloudflare Pages 会直接以 200
+  // 服务无尾斜杠 URL；若用 目录/index.html 形式，Pages 会把无斜杠 URL 308 到
+  // 尾斜杠变体，导致 sitemap/canonical 的无斜杠 URL 全部变成重定向
   const routes = [{ kind: 'home', locale, out: 'index.html', url: `${SITE_URL}/${locale}/` }]
-  routes.push({ kind: 'about', locale, out: 'about/index.html', url: `${SITE_URL}/${locale}/about` })
+  routes.push({ kind: 'about', locale, out: 'about.html', url: `${SITE_URL}/${locale}/about` })
   for (const tool of registryTools) {
     routes.push({
       kind: 'tool',
       locale,
       tool,
-      out: tool.path.replace(/^\//, '') + '/index.html',
+      out: tool.path.replace(/^\//, '') + '.html',
       url: `${SITE_URL}/${locale}${tool.path}`,
     })
   }
