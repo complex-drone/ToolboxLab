@@ -84,7 +84,8 @@ toolboxlab/
 ├── vite.config.js / vitest.config.js
 ├── tailwind.config.js / postcss.config.js
 ├── scripts/
-│   ├── generate-sitemap.js     # sitemap 生成（路由清单从工具注册表解析派生）
+│   ├── generate-sitemap.js     # sitemap 生成（路由清单从工具注册表解析派生，含 lastmod 与 hreflang 互换）
+│   ├── prerender.mjs           # 静态壳预渲染（283 页：141 URL × 2 语言 + 404.html，构建时执行）
 │   ├── verify-tools.mjs        # 工具/语言包完整性校验（npm run verify:tools）
 │   └── validate-analytics.js
 ├── docs/
@@ -107,7 +108,7 @@ toolboxlab/
     │   ├── PasswordGenerator.vue
     │   ├── LocaleSwitcher.vue
     │   ├── Toast.vue
-    │   └── tools/              # 工具页共享组件（ToolPage / CopyButton / FileDropZone）
+    │   └── tools/              # 工具页共享组件（ToolPage：面包屑/FAQ/相关工具 · CopyButton · FileDropZone）
     ├── composables/
     │   └── useToast.js         # 全局 Toast
     ├── locales/
@@ -133,7 +134,7 @@ toolboxlab/
 npm install        # 安装依赖
 npm run dev        # 开发服务器 http://localhost:5173
 npm test           # 运行 148 个测试用例
-npm run build      # 生产构建 + 生成 sitemap
+npm run build      # 生产构建 + sitemap + 静态壳预渲染（283 页）
 npm run preview    # 预览生产构建
 ```
 
@@ -143,7 +144,7 @@ npm run preview    # 预览生产构建
 |------|------|
 | `npm run dev` | 开发服务器（HMR，默认端口 5173） |
 | `npm test` / `npm run test:watch` | 运行测试 / 监听模式 |
-| `npm run build` | 生产构建并生成 sitemap |
+| `npm run build` | 生产构建 + 生成 sitemap + 静态壳预渲染 |
 | `npm run build:prod` | 以 production 模式构建 |
 | `npm run preview` | 本地预览构建产物 |
 | `npm run verify:tools` | 校验工具组件、语言包与注册表的一致性 |
@@ -169,7 +170,17 @@ tool('myTool', '/my-tool', 'MyTool.vue', '🔧'),
 - **URL 结构**：SEO 友好的语言前缀格式（`/zh-CN/json-formatter`、`/en-US/about`）
 - **优先级**：URL 语言前缀 > localStorage 偏好 > 浏览器语言 > 默认中文
 - **结构**：全局文案在 `locales/<lang>.js`，各工具文案独立成片段（`locales/tools/<lang>/<toolId>.js`），自动挂载到 `tools.<toolId>` 命名空间
-- **SEO**：hreflang / canonical / 每页独立 title 与 description / 多语言 sitemap（构建时生成）
+- **SEO**：canonical / hreflang / 每页独立 title 与 description / 多语言 sitemap，详见下节
+
+## 🔍 SEO
+
+- **静态壳预渲染**：构建时由 `scripts/prerender.mjs` 为全部 141 个路由 × 2 语言生成静态 HTML（含 404.html），爬虫无需执行 JS 即可获得每页的标题、描述、正文与结构化数据；已知路由均为真实静态文件，未知路径由 Cloudflare Pages 以 404 状态返回自定义 404 页（无 SPA 软 404）
+- **元数据**：每页注入 canonical、hreflang（zh / en / x-default 指向 zh-CN）、Open Graph 与 Twitter 卡片（站点级 `public/og-image.png` 1200×630，源稿 `scripts/og-card.html`）
+- **结构化数据（JSON-LD）**：全站 `WebApplication`；工具页 `BreadcrumbList`（首页 → 分类 → 工具）与 `FAQPage`（提供 FAQ 文案的工具）
+- **内容与内链**：46 个新工具提供双语言 FAQ（每工具 2 问）；全部工具页含面包屑导航与同分类"相关工具"内链；首页分类区块提供锚点（`#cat-<key>`）
+- **Sitemap**：sitemapindex + 双语言子表，每 URL 含 `lastmod`（取 src/ 最近提交时间）与 `xhtml:link` 语言互换
+- **robots.txt**：仅保留抓取策略与 3 个 sitemap 声明
+- **PWA**：`public/manifest.json` + SVG 图标
 
 ## 🔒 隐私与安全
 
