@@ -204,6 +204,8 @@ watch(
   </div>
 
   <div class="site">
+    <!-- 键盘用户跳转主内容（获得焦点时可见） -->
+    <a href="#main" class="skip-link">{{ t('nav.skipToContent') }}</a>
     <!-- 顶栏：站点名称 + 版本号 + 导航 -->
     <header class="site-header">
       <div class="container header-inner">
@@ -240,7 +242,7 @@ watch(
     </header>
 
     <!-- 主区域：路由出口 -->
-    <main class="container site-main">
+    <main id="main" class="container site-main">
       <router-view />
     </main>
 

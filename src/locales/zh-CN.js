@@ -11,6 +11,7 @@ export default {
   nav: {
     home: '首页',
     about: '关于',
+    skipToContent: '跳到主要内容',
   },
 
   // 页脚

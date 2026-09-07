@@ -290,8 +290,8 @@ const resultCopyText = computed(() => {
 /* ---------------- 样式辅助 ---------------- */
 function chipClass(active) {
   return active
-    ? 'chip cursor-pointer select-none'
-    : 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/70 text-slate-500 border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition cursor-pointer select-none'
+    ? 'chip chip-toggle cursor-pointer select-none'
+    : 'chip-toggle inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/70 text-slate-500 border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition cursor-pointer select-none'
 }
 </script>
 
