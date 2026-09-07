@@ -61,7 +61,7 @@ JS 混淆/美化（terser）· JSONPath 测试 · XPath 测试 · GraphQL/REST �
 ### 🧩 杂项增强
 文本转语音 · Identicon 生成 · 十六进制文件查看 · 剪贴板历史 · CSV 编辑器 · 密码短语生成（EFF 词库）· 批量重命名 · Markdown 转 HTML · HTML 转 Markdown · JSON 差异对比
 
-> 共性约定：配置经 `useStorage` 持久化；随机源统一使用 `crypto.getRandomValues` + 拒绝采样；所有输入均有错误边界（非法输入行内提示 + Toast，不白屏）；重依赖（PDF/视频/公式等）按需懒加载；移动端优先响应式。
+> 共性约定：配置经 `useStorage` 持久化；随机源统一使用 `crypto.getRandomValues` + 拒绝采样；所有输入均有错误边界（非法输入行内提示 + Toast，不白屏）；重依赖（PDF/视频/公式/图表等）按需懒加载；移动端优先响应式。全部 139 个工具均通过 `npm run verify:tools` 完整性校验与 Vitest 回归。
 
 ## 🛠 技术栈
 
@@ -74,6 +74,7 @@ JS 混淆/美化（terser）· JSONPath 测试 · XPath 测试 · GraphQL/REST �
 | **@vueuse/core** | ^10.11.1 | `useStorage` 等组合式函数 |
 | **Tailwind CSS** | ^3.4.17 | 毛玻璃风格 UI（关闭 preflight 保护存量样式） |
 | **Vitest** | ^2.1.9 | 单元/组件/集成测试（148 个用例） |
+| 功能库 | 按需 | mermaid（图表）/ frappe-gantt（甘特图）/ ajv（Schema 校验）/ turndown（HTML→MD）/ terser（混淆）/ regexp-tree + railroad-diagrams（铁路图）/ jsonpath-plus（JSONPath），重依赖一律函数内 `await import()` 懒加载 |
 
 ## 📁 项目结构
 
@@ -101,7 +102,7 @@ toolboxlab/
     ├── views/
     │   ├── HomeView.vue        # 首页（分类 + 搜索）
     │   ├── AboutView.vue
-    │   └── tools/              # ★ 139 个工具页面组件（每个工具一个 .vue）
+    │   └── tools/              # ★ 138 个工具页面组件（139 个工具，密码生成器复用共享组件）
     ├── components/
     │   ├── PasswordGenerator.vue
     │   ├── LocaleSwitcher.vue
@@ -120,6 +121,7 @@ toolboxlab/
         ├── random.js           # 加密级随机（拒绝采样）
         ├── clipboard.js / download.js / format.js
         ├── rmb.js / html.js / number.js / url.js
+        ├── effWordlist.js      # EFF Large Wordlist（密码短语生成器词库）
         └── password.js
 ```
 
