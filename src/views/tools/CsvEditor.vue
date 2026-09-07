@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStorage, useDebounceFn } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
+import { useCancellableDebounceFn } from '@/composables/useCancellableDebounceFn'
 import { useToast } from '@/composables/useToast'
 import ToolPage from '@/components/tools/ToolPage.vue'
 import FileDropZone from '@/components/tools/FileDropZone.vue'
@@ -176,7 +177,7 @@ function parseFromText(detect = true) {
   }
 }
 
-const parseDebounced = useDebounceFn(() => parseFromText(true), 300)
+const parseDebounced = useCancellableDebounceFn(() => parseFromText(true), 300)
 
 const colCount = computed(() => rows.value.reduce((m, r) => Math.max(m, r.length), 0))
 const headerOffset = computed(() => (config.value.hasHeader ? 1 : 0))

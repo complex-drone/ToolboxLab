@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStorage, useDebounceFn } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
+import { useCancellableDebounceFn } from '@/composables/useCancellableDebounceFn'
 import ToolPage from '@/components/tools/ToolPage.vue'
 import { downloadText, downloadCanvasAsPng } from '@/utils/download'
 import { useToast } from '@/composables/useToast'
@@ -80,7 +81,7 @@ async function doRender() {
   }
 }
 
-const debouncedRender = useDebounceFn(doRender, 300)
+const debouncedRender = useCancellableDebounceFn(doRender, 300)
 
 function downloadPng() {
   try {

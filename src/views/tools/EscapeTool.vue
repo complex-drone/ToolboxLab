@@ -2,7 +2,8 @@
 import { ref, reactive, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { escapeHtml } from '@/utils/html'
 import { useI18n } from 'vue-i18n'
-import { useStorage, useDebounceFn } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
+import { useCancellableDebounceFn } from '@/composables/useCancellableDebounceFn'
 import ToolPage from '@/components/tools/ToolPage.vue'
 import CopyButton from '@/components/tools/CopyButton.vue'
 import { useToast } from '@/composables/useToast'
@@ -185,7 +186,7 @@ function convertAll() {
     convertOne(m.id, 'unescape')
   }
 }
-const debouncedConvertAll = useDebounceFn(convertAll, 300)
+const debouncedConvertAll = useCancellableDebounceFn(convertAll, 300)
 
 watch(
   () => [
@@ -203,7 +204,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  if (typeof debouncedConvertAll.cancel === 'function') debouncedConvertAll.cancel()
+  debouncedConvertAll.cancel()
 })
 
 /** 当前视图绑定：输入随方向切换而独立保留 */

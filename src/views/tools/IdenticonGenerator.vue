@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStorage, useDebounceFn } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
+import { useCancellableDebounceFn } from '@/composables/useCancellableDebounceFn'
 import { useToast } from '@/composables/useToast'
 import ToolPage from '@/components/tools/ToolPage.vue'
 import { downloadDataUrl, downloadText } from '@/utils/download'
@@ -135,7 +136,7 @@ async function generate() {
   }
 }
 
-const generateDebounced = useDebounceFn(generate, 300)
+const generateDebounced = useCancellableDebounceFn(generate, 300)
 
 watch(() => config.value.input, () => generateDebounced())
 watch(() => config.value.size, () => nextTick(drawMain))

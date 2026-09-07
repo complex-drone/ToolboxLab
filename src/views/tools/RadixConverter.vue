@@ -1,7 +1,8 @@
 <script setup>
 import { reactive, ref, watch, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStorage, useDebounceFn } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
+import { useCancellableDebounceFn } from '@/composables/useCancellableDebounceFn'
 import ToolPage from '@/components/tools/ToolPage.vue'
 import CopyButton from '@/components/tools/CopyButton.vue'
 
@@ -111,7 +112,7 @@ function syncNow() {
   }
 }
 
-const debouncedSync = useDebounceFn(syncNow, 300)
+const debouncedSync = useCancellableDebounceFn(syncNow, 300)
 
 function onInput(base, event) {
   editingBase.value = base
