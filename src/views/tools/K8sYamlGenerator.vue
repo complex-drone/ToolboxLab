@@ -222,8 +222,12 @@ function buildService() {
   if (spec.type === 'ClusterIP' && String(f.clusterIP || '').trim() !== '') {
     spec.clusterIP = String(f.clusterIP).trim()
   }
-  const selector = cleanMap(f.labels)
-  if (Object.keys(selector).length) spec.selector = selector
+  // 未填写标签时默认 app: <资源名>，避免直接 apply 后 Service 无法关联 Pod
+  const userSelector = cleanMap(f.labels)
+  const selector = Object.keys(userSelector).length
+    ? userSelector
+    : { app: String(f.name).trim() }
+  spec.selector = selector
 
   spec.ports = validPorts.map((p) => {
     const port = { port: toPort(p.port) }
