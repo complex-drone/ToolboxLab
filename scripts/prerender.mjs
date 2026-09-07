@@ -118,7 +118,14 @@ function collectFaq(frag) {
 function pageInfo(locale, route) {
   const g = globals[locale]
   if (route.kind === 'home') {
-    return { title: g.app.name, description: g.app.description, h1: g.app.name, categoryKey: null, categoryName: '', faq: [] }
+    return {
+      title: g.app.seoTitle || g.app.name,
+      description: g.app.description,
+      h1: g.app.name,
+      categoryKey: null,
+      categoryName: '',
+      faq: [],
+    }
   }
   if (route.kind === 'about') {
     return { title: g.about.title, description: g.about.description, h1: g.about.title, categoryKey: null, categoryName: '', faq: [] }

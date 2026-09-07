@@ -29,7 +29,7 @@ const supportedLocales = ['zh-CN', 'en-US']
 // 页面元数据配置
 const pageMetas = {
   home: {
-    title: 'app.name',
+    title: 'app.seoTitle',
     description: 'app.description'
   },
   password: {
@@ -185,6 +185,14 @@ watch(currentLocale, (newLocale) => {
 watch(locale, () => {
   setPageMetadata()
 })
+
+// 监听同语言下的路由跳转（首页→工具、工具间互跳），同步刷新 title/canonical/OG
+watch(
+  () => route.fullPath,
+  () => {
+    setPageMetadata()
+  },
+)
 </script>
 
 <template>

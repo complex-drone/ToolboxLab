@@ -4,6 +4,7 @@ export default {
     name: 'ToolboxLab',
     description: '纯前端本地工具集，所有数据仅在本地处理',
     slogan: 'ToolboxLab',
+    seoTitle: 'ToolboxLab - 139 个免费在线工具',
   },
 
   // 导航

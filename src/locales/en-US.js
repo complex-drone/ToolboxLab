@@ -4,6 +4,7 @@ export default {
     name: 'ToolboxLab',
     description: 'Pure frontend local toolset, all data processed locally',
     slogan: 'ToolboxLab',
+    seoTitle: 'ToolboxLab - 139 Free Online Tools',
   },
 
   // 导航
