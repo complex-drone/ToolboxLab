@@ -6,12 +6,12 @@
 ![Tests](https://img.shields.io/badge/tests-148%20passed-22C55E)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-AI 辅助生成。一个基于 **Vue 3 + Vite** 的纯前端在线工具站，内置 **93 个工具**，所有功能均在本地浏览器运行，无需后端服务，数据不上传，保护您的隐私。支持中英双语。
+AI 辅助生成。一个基于 **Vue 3 + Vite** 的纯前端在线工具站，内置 **139 个工具**，所有功能均在本地浏览器运行，无需后端服务，数据不上传，保护您的隐私。支持中英双语。
 
 - **在线访问**：<https://toolboxlab.pages.dev/>
 - **问题反馈**：<https://github.com/complex-drone/ToolboxLab/issues>
 
-## ✨ 工具列表（93 个）
+## ✨ 工具列表（139 个）
 
 ### 🧰 格式校验与数据转换
 JSON 格式化校验 · 时间戳转换 · URL 编解码与 Base64 · 正则表达式测试 · UUID/NanoID 生成 · 哈希生成（MD5/SHA）· JWT 解码 · Cron 表达式解析 · 代码/文本统计 · 命名风格转换 · 文本差异对比 · 文本去重排序 · JSON/YAML/XML 互转 · Markdown 实时预览 · 转义/反转义
@@ -30,6 +30,36 @@ PDF 工具箱（合并/拆分/压缩）· PDF 转长图 · Word/Excel 转换 · 
 
 ### 🛡️ 安全、效率与杂项
 密码生成器 · 密码强度分析 · AES/RSA 加解密（Web Crypto）· Bcrypt · SSH 密钥生成 · 文件校验和（流式）· 番茄钟 · 简历生成器 · MBTI 测试 · EVM 挣值计算 · 条形码生成 · 手持弹幕 · 人民币大写
+
+### 📅 日期时间与计算器
+日期计算器（差值/加减）· 年龄计算器（生肖/星座）· 工作日计算器（节假日/调休）
+
+### 🔁 正则与文本可视化
+正则铁路图（SVG 导出）· 正则构建器 · 文本结构分析
+
+### 📊 图表与数据可视化
+Mermaid 图表编辑器 · 甘特图生成器 · JSON 树形可视化 · 数据透视表 · 流程图编辑器
+
+### ⚙️ DevOps 与配置生成
+K8s YAML 生成器 · Nginx 配置生成 · Dockerfile 分析 · .env 管理 · Helm 模板 Playground
+
+### 🧬 数据格式与 Schema
+JSON Schema 生成 · JSON Schema 校验（ajv）· SQL 方言转换 · OpenAPI 转 Postman · 设计 Token 转换
+
+### 🎨 设计与字体
+Google 字体预览 · 图片调色板提取 · 字体对比
+
+### 🕸️ 浏览器与网络高级
+WebSocket 客户端 · CORS 检测 · 浏览器指纹 · 书签链接检查 · 页面性能分析
+
+### 🧱 代码处理与安全
+JS 混淆/美化（terser）· JSONPath 测试 · XPath 测试 · GraphQL/REST 转换
+
+### 🔌 硬件与设备交互
+设备信息 · 键盘测试 · 麦克风可视化
+
+### 🧩 杂项增强
+文本转语音 · Identicon 生成 · 十六进制文件查看 · 剪贴板历史 · CSV 编辑器 · 密码短语生成（EFF 词库）· 批量重命名 · Markdown 转 HTML · HTML 转 Markdown · JSON 差异对比
 
 > 共性约定：配置经 `useStorage` 持久化；随机源统一使用 `crypto.getRandomValues` + 拒绝采样；所有输入均有错误边界（非法输入行内提示 + Toast，不白屏）；重依赖（PDF/视频/公式等）按需懒加载；移动端优先响应式。
 
@@ -71,7 +101,7 @@ toolboxlab/
     ├── views/
     │   ├── HomeView.vue        # 首页（分类 + 搜索）
     │   ├── AboutView.vue
-    │   └── tools/              # ★ 92 个工具页面组件（每个工具一个 .vue）
+    │   └── tools/              # ★ 139 个工具页面组件（每个工具一个 .vue）
     ├── components/
     │   ├── PasswordGenerator.vue
     │   ├── LocaleSwitcher.vue
