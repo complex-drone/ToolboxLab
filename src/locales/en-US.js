@@ -201,5 +201,7 @@ export default {
     all: 'All',
     seconds: 's',
     done: 'Done',
+    faqTitle: 'FAQ',
+    relatedTitle: 'Related tools',
   },
 }

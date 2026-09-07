@@ -88,9 +88,10 @@ function localized(path) {
       <p>{{ t('categories.searchEmpty') }}</p>
     </div>
 
-    <!-- 分类 + 工具卡片 -->
+    <!-- 分类 + 工具卡片（id 供面包屑/外链锚点定位） -->
     <section
       v-for="cat in filteredCategories"
+      :id="`cat-${cat.key}`"
       :key="cat.key"
       class="tool-category"
     >

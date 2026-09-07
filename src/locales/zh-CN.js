@@ -201,5 +201,7 @@ export default {
     all: '全部',
     seconds: '秒',
     done: '完成',
+    faqTitle: '常见问题',
+    relatedTitle: '相关工具',
   },
 }
