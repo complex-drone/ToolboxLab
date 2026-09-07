@@ -3,7 +3,7 @@
 ![Vue 3](https://img.shields.io/badge/Vue-3.5+-4FC08D?logo=vue.js)
 ![Vite](https://img.shields.io/badge/Vite-5.4+-646CFF?logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38BDF8?logo=tailwindcss)
-![Tests](https://img.shields.io/badge/tests-148%20passed-22C55E)
+![Tests](https://img.shields.io/badge/tests-152%20passed-22C55E)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 AI 辅助生成。一个基于 **Vue 3 + Vite** 的纯前端在线工具站，内置 **139 个工具**，所有功能均在本地浏览器运行，无需后端服务，数据不上传，保护您的隐私。支持中英双语。
@@ -73,7 +73,7 @@ JS 混淆/美化（terser）· JSONPath 测试 · XPath 测试 · GraphQL/REST �
 | **vue-i18n** | ^9.13.1 | 双语支持（Composition API 模式，`legacy: false`） |
 | **@vueuse/core** | ^10.11.1 | `useStorage` 等组合式函数 |
 | **Tailwind CSS** | ^3.4.17 | 毛玻璃风格 UI（关闭 preflight 保护存量样式） |
-| **Vitest** | ^2.1.9 | 单元/组件/集成测试（148 个用例） |
+| **Vitest** | ^2.1.9 | 单元/组件/集成测试（152 个用例） |
 | 功能库 | 按需 | mermaid（图表）/ frappe-gantt（甘特图）/ ajv（Schema 校验）/ turndown（HTML→MD）/ terser（混淆）/ regexp-tree + railroad-diagrams（铁路图）/ jsonpath-plus（JSONPath），重依赖一律函数内 `await import()` 懒加载 |
 
 ## 📁 项目结构
@@ -133,7 +133,7 @@ toolboxlab/
 ```bash
 npm install        # 安装依赖
 npm run dev        # 开发服务器 http://localhost:5173
-npm test           # 运行 148 个测试用例
+npm test           # 运行 152 个测试用例
 npm run build      # 生产构建 + sitemap + 静态壳预渲染（283 页）
 npm run preview    # 预览生产构建
 ```
