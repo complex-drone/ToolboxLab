@@ -26,9 +26,13 @@ const { toasts, remove } = useToast()
 // 支持的语言列表
 const supportedLocales = ['zh-CN', 'en-US']
 
-// 页面元数据配置
+// 页面元数据配置（home-locale 为 /:locale? 本地化首页路由名，两者元数据一致）
 const pageMetas = {
   home: {
+    title: 'app.seoTitle',
+    description: 'app.description'
+  },
+  'home-locale': {
     title: 'app.seoTitle',
     description: 'app.description'
   },
