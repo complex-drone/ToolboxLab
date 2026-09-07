@@ -97,7 +97,7 @@ function openPicker() {
       </svg>
     </div>
     <p class="drop-hint">{{ hint || t('toolsCommon.dropHint') }}</p>
-    <p class="drop-limit">{{ t('toolsCommon.fileTooLarge', { size: maxSizeLabel }) }}</p>
+    <p class="drop-limit">{{ t('toolsCommon.maxSizeHint', { size: maxSizeLabel }) }}</p>
   </div>
 </template>
 
