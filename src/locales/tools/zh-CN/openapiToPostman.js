@@ -1,0 +1,15 @@
+export default {
+  title: 'OpenAPI 转 Postman',
+  description: '把 OpenAPI 3.x 文档转换为 Postman Collection v2.1，按标签分组并自动生成请求示例',
+  inputLabel: 'OpenAPI 文档（JSON 或 YAML）',
+  inputPlaceholder: '粘贴 OpenAPI 3.x 的 JSON 或 YAML 内容…',
+  includeVariables: '把 servers 第一个地址写入 baseUrl 集合变量',
+  statEndpoints: '接口',
+  statFolders: '分组',
+  statBodies: '含请求体',
+  parseError: '解析失败，请检查 JSON 或 YAML 语法',
+  notOpenapi: '未识别到 OpenAPI 3.x 结构，缺少 openapi 或 paths 字段',
+  generated: 'Postman Collection 已生成',
+  outputLabel: 'Postman Collection（v2.1 JSON）',
+  outputPlaceholder: '转换结果将显示在这里…',
+}

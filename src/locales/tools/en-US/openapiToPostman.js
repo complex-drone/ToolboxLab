@@ -1,0 +1,15 @@
+export default {
+  title: 'OpenAPI to Postman',
+  description: 'Convert an OpenAPI 3.x document into a Postman Collection v2.1, grouped by tags with generated request examples',
+  inputLabel: 'OpenAPI document (JSON or YAML)',
+  inputPlaceholder: 'Paste OpenAPI 3.x JSON or YAML here…',
+  includeVariables: 'Write the first server URL into a baseUrl collection variable',
+  statEndpoints: 'Endpoints',
+  statFolders: 'Folders',
+  statBodies: 'With body',
+  parseError: 'Failed to parse. Check the JSON or YAML syntax',
+  notOpenapi: 'Not an OpenAPI 3.x document: missing the openapi or paths field',
+  generated: 'Postman Collection generated',
+  outputLabel: 'Postman Collection (v2.1 JSON)',
+  outputPlaceholder: 'The converted result will appear here…',
+}
